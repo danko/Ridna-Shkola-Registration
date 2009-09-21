@@ -1,0 +1,37 @@
+<h1>New Emergency Contact</h1>
+
+<% form_for(@emergency) do |f| %>
+  <%= f.error_messages %>
+	<p> * required fields</p>
+    <%= f.hidden_field :userid, :value => @other_user.userid %>
+  <p>
+    * <%= f.label "Last Name" %><br />
+    <%= f.text_field :lastname %>
+  </p>
+  <p>
+    * <%= f.label "First Name" %><br />
+    <%= f.text_field :firstname %>
+  </p>
+  <p>
+    * <%= f.label "Primary Phone" %> (555) 555-5555<br />
+    <%= f.text_field :dayphone %>
+  </p>
+  <p>
+    * <%= f.label "Alternate Phone" %><br />
+    <%= f.text_field :evephone %>
+  </p>
+  <p>
+    <%= f.label "Cell Phone" %><br />
+    <%= f.text_field :cellphone %>
+  </p>
+  <p>
+    <%= f.label :relationship %><br />
+    <%= f.select(:relationship, %w{Uncle Aunt Grandfather Grandmother other}) %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+<%= link_to 'Cancel', :controller => 'users', :action => 'show', :id => @other_user.id %>
+
+

@@ -1,0 +1,35 @@
+<h1>Listing all students</h1>
+
+<table>
+  <tr>
+
+    <th>Lastname</th>
+    <th>Firstname</th>
+    <th>Middlename</th>
+    <th>Allergies</th>
+    <th>Gender</th>
+    <th>Newgrade</th>
+    <th>Birthdate</th>
+	<th>Registration Year</th>
+  </tr>
+
+<% i=0 %>
+<% for student in @students %>
+	<% i = i + 1 %>
+  <tr>
+    <td><%=h student.lastname %></td>
+    <td><%=h student.firstname %></td>
+    <td><%=h student.middlename %></td>
+    <td><%=h student.allergies %></td>
+    <td><%=h student.gender %></td>
+    <td><%=h student.newgrade %></td>
+    <td><%=h student.birthdate %></td>
+    <td><%=h student.registration_year %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<h1> Total number of students: <%= i %> </h1>
+
+

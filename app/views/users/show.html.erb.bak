@@ -1,0 +1,35 @@
+<h1><%=h @user.family %> account info</h1>
+<p>
+  <b>Login:</b>
+  <%=h @user.login %>
+</p>
+
+<p>
+  <b>Hashed password:</b>
+  <%=h @user.hashed_password %>
+</p>
+<p>
+<p>
+  <b>Family:</b>
+  <%=h @user.family %>
+</p>
+<p>
+  <b>Admin:</b>
+  <% if @user.admin %>
+	 Has Administrator Privilages
+	<% end %>
+</p>
+<h1>Primary Contact Information</h1>
+<p>
+	<% if @user.apt %>	
+		<%=h @user.apt %> <br>
+	<% end %>
+	<%=h @user.street %><br>
+	<%=h @user.city %>, <%=h @user.state%> <%=h @user.zip %><br>
+  <%=h @user.email %><br>
+  <%=h @user.phonenum %><br>
+<p>
+
+<%= link_to 'User Listing', users_path %>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+

@@ -1,0 +1,33 @@
+<p>
+  <b>Lastname:</b>
+  <%=h @student.lastname %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%=h @student.firstname %>
+</p>
+
+<p>
+  <b>Middlename:</b>
+  <%=h @student.middlename %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%=h @student.gender %>
+</p>
+
+<p>
+  <b>Newgrade:</b>
+  <%=h @student.newgrade %>
+</p>
+
+<p>
+  <b>Birthdate:</b>
+  <%=h @student.birthdate %>
+</p>
+
+<%= link_to 'Student Listing', students_path %> | 
+<%= link_to 'Edit', edit_student_path(@student) %>
+

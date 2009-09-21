@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>Taras Shevchenko School of Ukrainian Studies</title>
+<!-- START:stylesheet -->
+  <%= stylesheet_link_tag "depot", :media => "all" %>
+  <!-- <label id="code.slt"/>  -->
+  <%= javascript_include_tag :defaults %>
+<!-- END:stylesheet -->
+</head>
+<body id="registration">
+  <div id="banner">
+    <!-- <%= image_tag("vinok.gif") %> --> 
+    <%= @page_title || "Taras Shevchenko School of Ukrainian Studies" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+    	<%= link_to 'Registration Instructions', :controller => 'admin', :action =>'instructions'%> <br />
+    	<%= link_to 'Contact us', :controller => 'admin', :action =>'contact'%> <br />
+      <br/>
+      <% if session[:user_id] %>
+      	<%= link_to 'Show My Account', :controller => 'users' %> <br />
+      	<%= link_to 'Change My Password', :controller => 'users' , :action => 'changePassword', :id => "all"%> <br /><br/>
+		<%= link_to 'Display 2009-2010 Classes', :controller => '/students', :action => 'displayNewClasses', :id => "all" %> <br />
+		<%= link_to 'Display 2008-2009 Classes', :controller => '/students', :action => 'displayOldClasses', :id => "all" %> <br />
+		<%= link_to 'Display Online Address Book', :controller => '/users', :action => 'onlineaddressbook', :id => "all" %> <br />
+
+
+
+		<%  @current_user = User.find(session[:user_id]) %>
+
+		<%if @current_user[:admin]%>
+			<b><ul>Reports</ul></b>
+        	<%= link_to 'Display All User Accounts', :controller => '/users', :action => 'display', :id => "all" %> <br />
+			<%= link_to 'Display Users That Owe', :controller => '/users', :action => 'displayUsersThatOwe', :id => "all" %> <br />
+			<%= link_to 'Display Registered Users', :controller => '/users', :action => 'displayRegisteredUsers', :id => "all" %> <br />
+			<%= link_to 'Print Registered Users', :controller => '/users', :action => 'printUsers', :id => "all" %> <br /><br/>
+        	<%= link_to 'Display all Students', :controller => 'students' %> <br />
+			<%= link_to 'Display all Parents', :controller => 'parents' %> <br />
+			<%= link_to 'Display 2009-2010 Students', :controller => '/students', :action => 'displayNewStudents', :id => "all" %> <br />
+  		<%= link_to 'Teacher Display of Classes', :controller => '/students', :action => 'teacherDisplayClasses', :id => "all" %> <br />
+
+			<br/>
+			<%= link_to 'Display Full Address Book', :controller => '/users', :action => 'addressbook', :id => "all" %> <br />
+			<%= link_to 'Display Paper Address Book', :controller => '/users', :action => 'paperaddressbook', :id => "all" %> <br /><br/>
+			<%= link_to 'Display Emails', :controller => '/users', :action => 'displayEmails', :id => "all" %> <br />
+			<%= link_to 'Generate Mass Email List', :controller => '/users', :action => 'generateMassEmailList', :id => "all" %> <br />			
+			
+			
+			<br>
+			<%= link_to 'Output to YAML', :controller => '/users', :action => 'output_yaml', :id => "all" %> <br />
+        	
+		
+		<%end%>
+        <br />
+        <%= link_to 'Logout', :controller => 'admin', :action => "logout" %> <br />
+      <% end %>
+      
+    </div>
+    <div id="main">
+      <% if flash[:notice] %>
+        <div id="notice"><%= flash[:notice]%></div>
+      <%end%>
+        
+      <%= yield :layout %><!-- <label id="code.depot.e.include"/> -->
+    </div>
+  </div>
+</body>
+</html>

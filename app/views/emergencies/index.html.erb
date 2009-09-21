@@ -1,0 +1,32 @@
+<h1>Listing emergencies</h1>
+
+<table>
+  <tr>
+    <th>Userid</th>
+    <th>Lastname</th>
+    <th>Firstname</th>
+    <th>Dayphone</th>
+    <th>Evephone</th>
+    <th>Cellphone</th>
+    <th>Relationship</th>
+  </tr>
+
+<% for emergency in @emergencies %>
+  <tr>
+    <td><%=h emergency.userid %></td>
+    <td><%=h emergency.lastname %></td>
+    <td><%=h emergency.firstname %></td>
+    <td><%=h emergency.dayphone %></td>
+    <td><%=h emergency.evephone %></td>
+    <td><%=h emergency.cellphone %></td>
+    <td><%=h emergency.relationship %></td>
+    <td><%= link_to 'Show', emergency %></td>
+    <td><%= link_to 'Edit', edit_emergency_path(emergency) %></td>
+    <td><%= link_to 'Destroy', emergency, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New emergency', new_emergency_path %>

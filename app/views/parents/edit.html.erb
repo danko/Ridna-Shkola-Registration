@@ -1,0 +1,58 @@
+<h1>Editing parent</h1>
+
+<% form_for(@parent) do |f| %>
+  <%= f.error_messages %>
+	<p> * required fields</p>
+	<table>
+		<tr>
+			<td>* <%= f.label "First Name" %></td>
+			<td><%= f.label "Middle Name" %></td>
+			<td>* <%= f.label "Last Name" %></td>
+		</tr>
+		<tr>
+			<td><%= f.text_field :firstname %></td>
+			<td><%= f.text_field :middlename %></td>
+			<td><%= f.text_field :lastname %></td>
+		</tr>
+		<tr>
+			<td>* <%= f.label "Daytime Phone (555) 555-5555" %></td>
+			<td>* <%= f.label "Evening Phone" %></td>
+			<td><%= f.label "Cell Phone" %></td>
+		</tr>
+		<tr>
+			<td><%= f.text_field :dayphone %></td>
+			<td><%= f.text_field :evephone %></td>
+			<td><%= f.text_field :cellphone %></td>
+		</tr>
+	</table>
+
+  <p>
+    * <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :relationship %><br />
+    <%= f.select(:relationship, %w{Mother Father}) %>
+  </p>
+  <p>
+    <%= f.label "Volunteer Interest, (Parents Committee, Mentor New Family, School Plays/Performances, Bazaar,Debutante Ball / Malanka, Web Design, Registration, Fundraising, Community Outreach, Hall Duty, Coffee, Pizza, Finance, Teaching, Substitute Teaching, No Interest)" %><br />
+    <%= f.text_field :volunteerinterest %>
+  </p>
+
+
+
+
+  <p>
+    <%= f.label :profession %><br />
+    <%= f.text_field :profession %>
+  </p>
+  <p>
+    <%= f.label :hobbies %><br />
+    <%= f.text_field :hobbies %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+<%= link_to 'Cancel', :controller => 'users', :action => 'show', :id => @other_user.id %>
+

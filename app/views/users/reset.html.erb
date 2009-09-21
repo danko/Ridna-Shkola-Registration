@@ -1,0 +1,11 @@
+<h1> Reset Password </h1>
+Please enter either your login name or the email address you provided when you created your account last year. Your new password will be emailed to you. When you log in you can change your password using the "Change Password" link.
+
+<% form_tag :action => 'resetPassword' do %>
+  
+	Login or Email: <%= text_field_tag :name%>
+    <%= submit_tag "ResetPassword" %>
+
+<% end %>
+
+<%= render(:partial=> "cancel") %>

@@ -1,0 +1,26 @@
+<h1>Listing checks</h1>
+
+<table>
+  <tr>
+    <th>Userid</th>
+    <th>Checknumber</th>
+    <th>Amount</th>
+	<th>Date</th>
+  </tr>
+
+<% for checks in @checks %>
+  <tr>
+    <td><%=h checks.userid %></td>
+    <td><%=h checks.checknumber %></td>
+    <td><%=h checks.amount %></td>
+	<td><%=h checks.updated_on %></td>
+    <td><%= link_to 'Show', checks %></td>
+    <td><%= link_to 'Edit', edit_checks_path(checks) %></td>
+    <td><%= link_to 'Destroy', checks, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New checks', new_checks_path %>

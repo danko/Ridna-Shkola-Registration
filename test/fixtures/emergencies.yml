@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  userid: 9.99
+  lastname: MyString
+  firstname: MyString
+  dayphone: MyString
+  evephone: MyString
+  cellphone: MyString
+  relationship: MyString
+
+two:
+  userid: 9.99
+  lastname: MyString
+  firstname: MyString
+  dayphone: MyString
+  evephone: MyString
+  cellphone: MyString
+  relationship: MyString

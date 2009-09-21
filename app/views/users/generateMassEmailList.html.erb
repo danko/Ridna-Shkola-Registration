@@ -1,0 +1,7 @@
+<% for user in @users %>
+	<% student = Student.find_by_userid( user.userid, :order => :firstname) %>
+
+	<% if student != nil && student.registration_year == "2009-2010" %>
+		<%=h user.email %>;
+	<%end%>
+<% end %>

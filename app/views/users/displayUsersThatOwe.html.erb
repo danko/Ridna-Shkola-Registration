@@ -1,0 +1,33 @@
+<h1>Listing all users with an unpaid balance</h1>
+
+<table>
+  <tr>
+    <th>Family</th>
+    <th>Login</th>
+	<th>Amt Due</th>
+	<th>Amt Paid </th>
+	<th>Balance </th>
+  </tr>
+<% i = 0 %>
+<% for user in @users %>
+<% puts user.family %>
+<% temp_balance = user.calc_balance %>
+ <% if temp_balance > 0 %>
+	<% i = i + 1 %>
+  	<tr>
+    	<td><%=h user.family %></td>
+    	<td><%=h user.login %></td>
+		<td><%= number_to_currency(user.amountdue) %></td>
+		<td><%=h number_to_currency(user.calc_amountpaid) %></td>
+		<td><%=h number_to_currency(temp_balance) %></td>
+		<td><% form_for :user, :url => new_check_path do |form| %>
+		    <%= form.hidden_field(:id, :value => user.id) %>
+		    <%= form.submit "Add/Delete Checks" %>
+		<%end%></td>
+  	</tr>
+  <%end%>
+<% end %>
+</table>
+<br />
+<h1> Total number of users: <%= i %></h1>
+

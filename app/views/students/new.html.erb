@@ -1,0 +1,41 @@
+<h1>New Child</h1>
+
+<% form_for(@student) do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field :userid, :value => @other_user.userid %>
+	<p> * required fields</p>
+  <p>
+    * <%= f.label "First Name" %><br />
+    <%= f.text_field :firstname %>
+  </p>
+  <p>
+    <%= f.label "Middle Name" %><br />
+    <%= f.text_field :middlename %>
+  </p>
+  <p>
+    * <%= f.label "Last Name" %><br />
+    <%= f.text_field :lastname %>
+  </p>
+  <p>
+    <%= f.label "Allergies" %><br />
+    <%= f.text_field :allergies %>
+  </p>
+  <p>
+    * <%= f.label :gender %><br />
+    <%= f.select(:gender, %w{Male Female}) %><br />
+  </p>
+  <p>
+    * <%= f.label "New Grade" %><br />
+  	  	<%= f.select(:newgrade, %w{Svitlychka Pidhotovcha Bilingual1 Bilingual2 1 2 3 4 5 6 7 8 9 10 11 }) %><br />	
+  </p>
+  <p>
+    * <%= f.label "Birth Date" %><br />
+    <%= f.date_select :birthdate, :start_year=>1990, :order=>[:month, :day, :year]%>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= render(:partial=> "cancel") %>
+ 

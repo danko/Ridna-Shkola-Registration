@@ -1,0 +1,366 @@
+
+
+<h1>Listing all 2009-2010 classes</h1>
+
+
+
+<% i=0 %>
+<% total = 0 %>
+<% grade=""%>
+
+<h1> Svitlychka</h1>
+Mrs. Tunia Yearout<br />
+703-430-2693<br />
+PaniTunia@verizon.net 
+<br />
+<br />
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = 'Svitlychka'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+
+<h1>Lower Classes</h1>
+<% i=0 %>
+<h3>Pidhotovcha</h3>
+Mrs. Lida Futey-Murphy<br/>
+410-647-8264<br/>
+futeymurphy@comcast.net
+<br />
+<br />
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = 'Pidhotovcha'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+<% i=0 %>
+<h3>Bilingual - 1</h3>
+Mrs. Larissa Fontana<br/>
+301-365-2490<br/>
+DJFplsurg@AOL.com
+<br />
+<br />
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = 'Bilingual1'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+<% i=0 %>
+<h3>1st Grade</h3>
+Mrs. Olha Onyshko<br/>
+301-365-7332<br/>
+olia@verizon.net
+<br />
+<br />
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = '1'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+
+<% i=0 %>
+<h3>2nd Grade</h3>
+Mrs. Lesia Koval<br/>
+301-309-8410<br/>
+lesiakov@netscape.net
+<br />
+<br />
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = '2'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+<% i=0 %>
+<h3>Bilingual - 2</h3>
+Dr. Marta Kowalczyk<br/>
+703-533-9879<br/>
+mkowalczyk@cox.net
+<br />
+<br />
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = 'Bilingual2'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+<% i=0 %>
+<h3>3rd Grade</h3>
+Mrs. Talia Cybyk<br/>
+410-884-5984<br/>
+cybyktz@gmail.com
+<br />
+<br />
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = '3'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+<% i=0 %>
+<h3>4th Grade</h3>
+Ms. Liana Tsvyetova<br/>
+202-577-1698<br/>
+lianatsv@gmail.com.com
+<br />
+<br />
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = '4'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+<% i=0 %>
+<h3>5th Grade</h3>
+Mrs. Olya Golovchak<br/>
+410-870-2141
+<br />
+<br />
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = '5'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+<h1>Upper Classes</h1>
+<h3>6th Grade</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = '6'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+<h3>7th Grade</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = '7'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+<h3>8th Grade</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = '8'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+<h3>9th Grade</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = '9'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+<h3>10th Grade</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = '10'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+<h3>11th Grade</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2009-2010' and newgrade = '11'", :order => :lastname)
+%>
+<table>
+<% for student in @students %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+</table>
+Number of Students:  <%= i %>
+
+<br />
+<h1> Total number of students: <%= total %> </h1>
+
+<h3>Language/Grammar Teachers</h3>
+Mrs. Tetiana Kindzelska<br/>
+313-452-1446<br/>
+tapki@jhu.edu<br/>
+<br/>
+
+Ms. Tetiana Littlefield<br/>
+571-282-5833<br/>
+luchanka42@hotmail.com<br/>
+<br/>
+Mr. Theodore Caryk<br/>
+301-840-1713<br/>
+<br/>
+
+<h3>History Teachers</h3>
+Mrs. Marika Jurach<br/>
+703-864-3723<br/>
+marikaju@starpower.net<br/>
+<br/>
+
+<h3>History/Literature</h3>
+Mrs. Nusia Kerda<br/>
+703-780-5725<br/>
+kerda@aol.com<br/>
+<br/>
+
+<h3>Culture</h3>
+Ms. Veronika Galetska<br/>
+202-487-6038<br/>
+verohal@ukr.net<br/>
+<br/>
+
+<h3>Literature</h3>
+Mr. Taras Lychuk<br/>
+<br/>
+Mr. Stepan Kerda<br/>
+703-780-5725<br/>
+kerda@aol.com<br/>
+<br/>
+<h3>Geography</h3>
+Ms. Olia Kushnir<br/>
+olhakushnir@yahoo.com<br/>
+<br/>
+
+
+
+<h1>Additional Faculty</h1>
+
+Dr. Darka Nebesh<br/>
+Music and Cultural Arts Committee co-chair<br/>
+410-997-5382<br/>
+dnebesh@hotmail.com<br/>
+<br/>
+Fr. Taras Lonchyna<br/>
+Ethics and Culture<br/>
+301-421-1739<br/>
+lonchtar@starpower.net<br/>
+<br/>
+Mrs. Sonia Karmazyn<br/>
+Cultural Arts Committee co-chair<br/>
+301-260-9630<br/>
+karmazyns@yahoo.com<br/>
+<br/>
+Dr. Maia Saj Schmidt<br/>
+Resource Teacher<br/>
+703-326-9518<br/>
+msajschmidt@gmail.com<br/>
+<br/>
+Mrs. Tanya Murza<br/>
+Teaching Assistant<br/>
+301-779-2284<br/>
+tanya_murza@yahoo<br/>
+<br/>
+Mrs. Myrosia Kotyk<br/>
+Teaching Assistant<br/>
+Myrosiakotyk@verizon.net<br/>
+<br/>
+<h1>Administration</h1>
+Mrs. Melana Zyla Vickers<br/>
+Director<br/>
+703-798-7837<br/>
+vickersm@cox.net<br/>
+<br/>
+Mr. Oleksa Breslawec<br/>
+Treasurer<br/>
+301-983-0168<br/>
+opb9505@verizon.net<br/>
+<br/>
+Mrs. Olena Shevchenko<br/>
+President, Batkivsky Komitet<br/>
+301-229-1220<br/>
+oshevchenko@verizon.net<br/>
+<br/>
+Mr. Francesco “Franko” Piazza<br/>
+Volunteer Coordinator<br/>
+703-624-7741<br/>
+fp_brklyn@hotmail.com<br/>
+<br/>
+Mr. Theodore Caryk<br/>
+Special Advisor<br/>
+301-840-1713<br/>
+<br/>
+Mr. Roman S. Ponos<br/>
+Board Member<br/>
+703-867-6847<br/>
+vdoma@verizon.net<br/>
+<br/>
+Mr. Bohdan Shevchik<br/>
+Board Member<br/>
+410-703-7369<br/>
+bo@evropashop.com<br/>

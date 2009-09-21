@@ -1,0 +1,70 @@
+<h1>New parent</h1>
+
+<% form_for(@parent) do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field(:userid, :value => @other_user.userid) %>
+	<p> * required fields</p>
+	<table>
+		<tr>
+			<td>* <%= f.label "First Name" %></td>
+			<td><%= f.label "Middle Name" %></td>
+			<td>* <%= f.label "Last Name" %></td>
+		</tr>
+		<tr>
+			<td><%= f.text_field :firstname %></td>
+			<td><%= f.text_field :middlename %></td>
+			<td><%= f.text_field :lastname %></td>
+		</tr>
+		<tr>
+			<td>* <%= f.label "Daytime Phone (555) 555-5555" %></td>
+			<td>* <%= f.label "Evening Phone" %></td>
+			<td><%= f.label "Cell Phone" %></td>
+		</tr>
+		<tr>
+			<td><%= f.text_field :dayphone %></td>
+			<td><%= f.text_field :evephone %></td>
+			<td><%= f.text_field :cellphone %></td>
+		</tr>
+	</table>
+
+  <p>
+    * <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :relationship %><br />
+    <%= f.select(:relationship, %w{Mother Father}) %>
+  </p>
+  <p>
+    <%= f.label "Volunteer Interest" %><br />
+	<%= select_tag "volunteerinterest", 
+	"<option>Parents Committee (Bat-Kom)</option>
+	<option>School Plays/Performances</option>
+	<option>Bazaar</option>
+	<option>Debutante Ball / Malanka</option>
+	<option>Web Design</option>
+	<option>Registration</option>
+	<option>Fundraising</option>
+	<option>Community Outreach</option>
+	<option>Hall Duty</option>
+	<option>Coffee</option>
+	<option>Pizza</option>
+	<option>Other</option>
+	<option>No Interest</option>
+	"%>
+  </p>
+  <p>
+    <%= f.label :profession %><br />
+    <%= f.text_field :profession %>
+  </p>
+  <p>
+    <%= f.label :hobbies %><br />
+    <%= f.text_field :hobbies %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Cancel', :controller => 'users', :action => 'show', :id => @other_user.id %>
+

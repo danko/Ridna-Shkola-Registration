@@ -1,0 +1,8 @@
+<% if student.newgrade != grade%>
+	<% if i > 0 %>
+		<tr><td>Number of Students:  <%= i %></td></tr>
+		<% i = 0 %>
+	<%end%>
+	<tr><td> <b><ul>Grade: <%= student.newgrade%></ul></b></td></tr>
+	<% grade = student.newgrade %>
+<% end %>

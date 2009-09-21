@@ -1,0 +1,33 @@
+
+
+<h1>Listing all classes</h1>
+
+<table>
+<% i=0 %>
+<% total = 0 %>
+<% grade=""%>
+<% for student in @students %>
+
+	<% if student.newgrade != grade%>
+		<% if i > 0 %>
+			<tr><td>Number of Students:  <%= i %></td></tr>
+			<% i = 0 %>
+		<%end%>
+		<tr><td> <b><ul>Grade: <%= student.newgrade%></ul></b></td></tr>
+		<% grade = student.newgrade %>
+	<% end %>
+  <tr>
+    <td><%=h student.lastname %></td>
+    <td><%=h student.firstname %></td>
+  </tr>
+	<% i = i + 1 %>
+	<%total = total + 1 %>
+<% end %>
+<tr><td>Number of Students:  <%= i %></td></tr>
+</table>
+
+<br />
+<h1> Total number of students: <%= total %> </h1>
+
+
+

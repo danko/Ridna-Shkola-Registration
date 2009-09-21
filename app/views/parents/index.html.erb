@@ -1,0 +1,26 @@
+<h1>Listing All Parents</h1>
+
+<table>
+  <tr>
+    <th>Lastname</th>
+    <th>Firstname</th>
+    <th>Middlename</th>
+    <th>Relationship</th>
+    <th>Volunteerinterest</th>
+    <th>Profession</th>
+    <th>Hobbies</th>
+  </tr>
+
+<% for parent in @parents %>
+  <tr>
+    <td><%=h parent.lastname %></td>
+    <td><%=h parent.firstname %></td>
+    <td><%=h parent.middlename %></td>
+    <td><%=h parent.relationship %></td>
+    <td><%=h parent.volunteerinterest %></td>
+    <td><%=h parent.profession %></td>
+    <td><%=h parent.hobbies %></td>
+  </tr>
+<% end %>
+</table>
+

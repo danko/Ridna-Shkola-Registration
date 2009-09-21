@@ -1,0 +1,40 @@
+<h1>Editing book</h1>
+
+<% form_for(@book) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    <%= f.label :booktype %><br />
+    <%= f.text_field :booktype %>
+  </p>
+  <p>
+    <%= f.label :grade %><br />
+  	<%= f.select(:grade, %w{Svitlychka Pidhotovcha Bilingual1 Bilingual2 1 2 3 4 5 6 7 8 9 10 11 }) %>
+  </p>
+  <p>
+    <%= f.label :required %><br />
+    <%= f.check_box :required %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @book %> |
+<%= link_to 'Back', books_path %>

@@ -1,0 +1,103 @@
+
+<h1><%=h @current_user.family %>  </h1>
+
+<h3>Primary Contact Information </h3>
+<% if @current_user.apt %>	
+	<%=h @current_user.apt %> <br>
+<% end %>
+<%=h @current_user.street %><br>
+<%=h @current_user.city %>, <%=h @current_user.state%> <%=h @current_user.zip %>
+<p>
+<%=h @current_user.email %>
+<br>
+<%=h @current_user.phonenum %><p>
+	
+	<% if @current_user.paperaddressbook %>
+		You have agreed to have your information included in the school hardcopy address book.<br>
+	<% else %> 
+		You have not agreed to have your information included in the school printed address book.<br>
+	<% end %>
+	<% if @current_user.onlineaddressbook %>
+		You have agreed to let all registration site accounts access your family's contact information using this site.<br>
+	<% else %> 
+		You have not agreed to let all registration site accounts access your family's contact information using this site.<br>
+	<% end %>
+
+<%= link_to 'Edit Account and Contact Information', edit_user_path(@current_user) %>	
+
+<h1>Your Children here</h1>
+<%= link_to 'Add a Student', new_student_path %>
+<table>
+	<tr>
+    <th>Lastname</th>
+    <th>Firstname</th>
+    <th>Middlename</th>
+    <th>Gender</th>
+    <th>Grade</th>
+    <th>Birthdate</th>
+  </tr>
+
+<% @current_students = Student.find_all_by_userid( @current_user.userid, :order => :firstname) %>
+<% for student in @current_students %>
+	<tr>
+	  <td><%=h student.lastname %></td>
+	  <td><%=h student.firstname %></td>
+	  <td><%=h student.middlename %></td>
+	  <td><%=h student.gender %></td>
+	  <td><%=h student.newgrade %></td>
+	  <td><%=h student.birthdate %></td>
+	  
+	  <td><%= link_to 'Edit', edit_student_path(student) %></td>
+	  <td><%= link_to 'Delete', student, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+<% end %>
+</table>
+
+<h1> Parents and Guardians </h1>
+<%= link_to 'Add a Parent', new_parent_path %>
+<table>
+	<tr>
+	<th>Relationship</th>
+    <th>Lastname</th>
+    <th>Firstname</th>
+    <th>Middlename</th>
+  </tr>
+
+<% @current_parents = Parent.find_all_by_userid( @current_user.userid, :order => :firstname) %>
+<% for parent in @current_parents %>
+	<tr>
+	  <td><%=h parent.relationship %></td>
+	  <td><%=h parent.lastname %></td>
+	  <td><%=h parent.firstname %></td>
+	  <td><%=h parent.middlename %></td>
+	  
+	  <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
+	  <td><%= link_to 'Delete', parent, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+<% end %>
+</table>
+
+<h1> Emergency Contacts </h1>
+<%= link_to 'Add a Contact', new_emergency_path %>
+<table>
+	<tr>
+    <th>LastName</th>
+    <th>FirstName</th>
+    <th>DaytimePhone</th>
+    <th>EveningPhone</th>
+    <th>CellPhone</th>
+  </tr>
+<% @current_contacts = Emergency.find_all_by_userid( @current_user.userid, :order => :lastname) %>
+<% for contact in @current_contacts %>
+	<tr>
+	  <td><%=h contact.lastname %></td>
+	  <td><%=h contact.firstname %></td>
+	  <td><%=h contact.dayphone %></td>
+	  <td><%=h contact.evephone %></td>
+	  <td><%=h contact.cellphone %></td>
+
+	  <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
+	  <td><%= link_to 'Delete', parent, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+<% end %>
+</table>

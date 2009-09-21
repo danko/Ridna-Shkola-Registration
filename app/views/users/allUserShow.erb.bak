@@ -1,0 +1,35 @@
+<%= link_to 'New user', new_user_path %>
+
+<h1>Listing all users</h1>
+
+<table>
+  <tr>
+    <th>Family</th>
+    <th>Login</th>
+    <th>Email</th>
+	<th>Amt Due</th>
+	<th>Amt Paid </th>
+	<th>Amt Owed </th>
+    <th>Admin</th>
+  </tr>
+<% i = 0 %>
+<% for user in @all_users %>
+	<% i = i + 1 %>
+  <tr>
+    <td><%=h user.family %></td>
+    <td><%=h user.login %></td>
+    <td><%=h user.email %></td>
+	<td>$<%=h user.amountdue %></td>
+	<td>$<%=h user.amountpaid %></td>
+	<td>$<%=h user.amountdue - user.amountpaid %></td>
+    <td><%=h user.admin %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Delete', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<h1> Total number of users: <%= i %></h1>
+

@@ -1,0 +1,69 @@
+<h1>Editing <%=h @user.family %></h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+	<p> * required fields</p>
+<h3> Account Information </h3>
+
+	<table>
+		<tr>
+			<td>* <%= f.label :login %></td>
+			<td>* <%= f.label :family %></td>
+		</tr>
+		<tr>
+			<td><%= f.text_field :login, :size => 40 %></td>
+			<td><%= f.text_field :family, :size => 40 %></td>
+		</tr>
+  </table>
+	<% if @current_user.admin %>
+		<%= f.check_box(:admin)%>
+		Has Admin privileges.
+		<br />
+	<% end %>
+	<%= f.check_box(:paperaddressbook)%>
+	I agree to include my family's information in the school's hardcopy address book.
+	<br />
+	<%= f.check_box(:onlineaddressbook)%>
+	I agree to all account holders of this site to access my family's contact information.
+
+<h3>Primary Contact Information</h3>
+  <table>
+    <tr>
+		<td>* <%= f.label :street %></td>
+		<td><%= f.label :apt %></td>
+	</tr>
+	<tr> 
+    	<td><%= f.text_field :street %></td>
+		<td><%= f.text_field :apt %></td>
+	</tr>
+  </table>
+  <table>
+	<tr>
+    	<td>* <%= f.label :city %></td>
+    	<td>* <%= f.label :state %></td>
+    	<td>* <%= f.label :zip %></td>
+	</tr>
+	<tr>
+    	<td><%= f.text_field :city %></td>
+    	<td><%= f.select(:state, %w{DC DE MD PA VA WV}) %></td>
+		<td><%= f.text_field :zip %></td>
+	</tr>
+  </table>
+  <p>
+    * <%= f.label "Primary Phone (555) 555-5555" %><br />
+    <%= f.text_field :phonenum %>
+  </p>
+
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  
+
+  <%= f.submit "Update" %>
+<% end %>
+<br />
+<%= render(:partial=> "cancel") %>
+
+
+

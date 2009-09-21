@@ -1,0 +1,195 @@
+
+
+<h1>Listing all 2008-2009 classes</h1>
+
+
+
+<% i=0 %>
+<% total = 0 %>
+<% grade=""%>
+
+<h1> Svitlychka</h1>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = 'Svitlychka'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+
+<h1>Lower Classes</h1>
+<% i=0 %>
+<h3>Pidhotovcha</h3>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = 'Pidhotovcha'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+<% i=0 %>
+<h3>Bilingual - 1</h3>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = 'Bilingual1'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+<% i=0 %>
+<h3>1st Grade</h3>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = '1'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+
+<% i=0 %>
+<h3>2nd Grade</h3>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = '2'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+<% i=0 %>
+<h3>Bilingual - 2</h3>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = 'Bilingual2'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+<% i=0 %>
+<h3>3rd Grade</h3>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = '3'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+<% i=0 %>
+<h3>4th Grade</h3>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = '4'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+<% i=0 %>
+<h3>5th Grade</h3>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = '5'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+<h1>Upper Classes</h1>
+<h3>6th Grade</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = '6'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+<h3>7th Grade</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = '7'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+<h3>8th Grade</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = '8'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+<h3>9th Grade</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = '9'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+<h3>10th Grade</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = '10'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+<h3>11th Grade</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2008-2009' and newgrade = '11'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+
+<br />
+<h1> Total number of students: <%= total %> </h1>

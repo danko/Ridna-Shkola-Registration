@@ -1,0 +1,40 @@
+
+<h1><%=h @current_user.family %>  Registration for 2009 - 2010 School Year</h1>
+
+<table>
+	<tr>
+    <th>First</th>
+    <th>Middle</th>
+    <th>Last</th>
+    <th>Entering Grade</th>
+  </tr>
+
+<% @current_students = Student.find_all_by_userid( @current_user.userid, :order => :firstname) %>
+<% for student in @current_students %>
+	<tr>
+	  <td><%=h student.firstname %></td>
+	  <td><%=h student.middlename %></td>
+	  <td><%=h student.lastname %></td>	
+	  <td><%=h student.newgrade %></td>	  
+	</tr>
+<% end %>
+</table>
+
+
+<h4> Your total cost for the <%=@current_user.num_of_children_all%> children is: $<%= @calculated_amount_due %> </h4>
+<% if @current_user.num_in_svitlychka < 3 && @current_user.num_in_svitlychka > 0 %>
+  <h4> This price includes of discount of $<%= @current_user.num_in_svitlychka * 400 %>. 
+  The discount is in the amount of tuition due to svitlychka </h4>
+<% elsif @current_user.num_in_svitlychka > 2 %>
+  <h4> You do not owe anything to ridna shkola because your fee to svitlychka is greater then the cost of ridna shkola tuition. </h4>
+  
+<% end %>
+
+<br/>
+
+<br/>
+<h3>If this is not correct, please update information about your children and try registering again. <h3>
+<%= link_to 'Complete Registration', :controller => 'users', :action => 'completeRegistration', :id => :user_id %>
+<%= render(:partial=> "cancel") %>
+
+	

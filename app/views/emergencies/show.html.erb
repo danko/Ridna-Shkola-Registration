@@ -1,0 +1,38 @@
+<p>
+  <b>Userid:</b>
+  <%=h @emergency.userid %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%=h @emergency.lastname %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%=h @emergency.firstname %>
+</p>
+
+<p>
+  <b>Dayphone:</b>
+  <%=h @emergency.dayphone %>
+</p>
+
+<p>
+  <b>Evephone:</b>
+  <%=h @emergency.evephone %>
+</p>
+
+<p>
+  <b>Cellphone:</b>
+  <%=h @emergency.cellphone %>
+</p>
+
+<p>
+  <b>Relationship:</b>
+  <%=h @emergency.relationship %>
+</p>
+
+
+<%= link_to 'Edit', edit_emergency_path(@emergency) %> |
+<%= link_to 'Back', emergencies_path %>

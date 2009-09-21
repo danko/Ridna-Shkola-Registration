@@ -1,0 +1,24 @@
+<div class="depot-form">
+  <% form_tag do %>
+    <fieldset>
+      <legend>Try to login using either your login account name or email address from last years registration.</legend>
+      <div>
+        <label for="name">Login Name:</label>
+        <%= text_field_tag :name, params[:name] %>
+      </div>
+
+      <div>
+        <label for="password">Password:</label>
+        <%= password_field_tag :password, params[:password] %>
+      </div>
+  
+      <div>
+        <%= submit_tag "Login" %>
+        <%= link_to 'Create New Account', :controller => '/users', :action => 'new' %>
+		<%= link_to 'Reset Password', :controller => '/users', :action => 'reset', :id => 'all'%>
+      </div>
+    </fieldset>
+  <% end %>
+<p>Instructions to register, just log in and ensure that all the information on your main account page is up to date and accurate. All the data that you entered last year should be in the system. Make sure you change your children's grade to reflect the new grade that they will be entering in the fall. For more detailed instructions see the "Registration Instructions" link on the top left part of the page. The "contact us" link will give you an email address to use if you have any trouble.
+</p>
+</div>

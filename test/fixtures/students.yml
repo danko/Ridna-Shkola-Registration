@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  userid: 9.99
+  studentid: 9.99
+  lastname: MyString
+  firstname: MyString
+  middlename: MyString
+  gender: MyString
+  newgrade: MyString
+  birthdate: 2009-03-25
+
+two:
+  userid: 9.99
+  studentid: 9.99
+  lastname: MyString
+  firstname: MyString
+  middlename: MyString
+  gender: MyString
+  newgrade: MyString
+  birthdate: 2009-03-25

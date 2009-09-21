@@ -1,0 +1,54 @@
+<h1>Billing Information</h1>
+<% if @current_user.num_of_children > 0 %>
+<table>
+<% if @current_user.num_in_svitlychka > 0 %>
+<tr>
+  <td>Number children enrolled in Svitlychka: </td>
+  <td><%= @current_user.num_in_svitlychka%></td>
+</tr>
+<tr>
+  <td>Tuition due Svitlychka: </td>
+  <td><%= number_to_currency(@current_user.num_in_svitlychka * 400) %></td>
+</tr>
+<% end%>
+  <tr>
+    <td>Number children enrolled in Ukrainian School and Svitlychka: </td> 
+    <td><%= @current_user.num_of_children %> </td>
+  </tr>
+
+  <tr>
+    <td>Tuition due Ukrainian School: </td>
+    <td><%= number_to_currency(@current_user.calc_amount_due) %></td>
+  </tr>
+
+  <tr>
+    <td>Amount Paid to Ukrainian School: </td>
+    <td><%= number_to_currency(@current_user.calc_amountpaid) %></td>
+  </tr>
+  <tr>
+    <td>Current Balance due Ukrainian School: </td>
+    <td><%= number_to_currency(@current_user.calc_balance) %></td>
+  </tr>
+</table>
+<h1>Checks</h1>
+<p>Date Processed - Date the check was entered into this system, should be close to deposit date.</p>
+<table>
+  <tr>
+    <th>Check Number</th>
+    <th>Amount</th>
+    <th>Date Processed</th>
+  </tr>
+
+<% @current_checks = Check.find_all_by_userid( @current_user.userid, :order => :checknumber) %>
+<% for check in @current_checks %>
+<tr>
+  <td><%=h number_with_precision(check.checknumber, 0) %></td>
+  <td><%=h number_to_currency(check.amount) %></td>
+  <td><%=h check.updated_on %></td>
+</tr>
+<%end%>
+</table>
+<%end%>	
+
+
+

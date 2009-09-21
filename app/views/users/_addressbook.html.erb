@@ -1,0 +1,34 @@
+<h1>Taras Shevchenko School of Ukrainian Studies Address Book</h1>
+
+
+<% i = 0 %>
+<% for user in @users %>
+	<% i = i + 1 %>
+    <h3><%=h user.family %></h3>
+	<% @current_parents = Parent.find_all_by_userid( user.userid, :order => :firstname) %>
+	<b>Parents</b><br />
+	<% for parent in @current_parents %>
+		<%=h parent.firstname %> <%=h parent.lastname %> <br />		
+	<% end %>
+	<% @current_students = Student.find_all_by_userid( user.userid, :order => :firstname) %>
+	<b>Students</b><br />
+	<% for student in @current_students %>
+		<%=h student.firstname %> <%=h student.lastname %> <%=h student.newgrade %><br />
+	<% end %>
+	<br />
+	<%=h user.street %>
+	<% if user.apt %>
+		Apt: <%= user.apt %>
+	<% end %>
+	<br />
+	<%=h user.city %>, 	<%=h user.state %> 	<%=h user.zip %><br />
+	<%=h user.phonenum %><br />
+	<%=h user.email %><br />
+
+<% end %>
+
+
+<br />
+<h1> Total number of families: <%= i %></h1>
+
+<%= link_to 'Back', {}, {:onclick => "window.history.go(-1); return false;" }%>

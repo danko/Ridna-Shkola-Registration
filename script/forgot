@@ -1,0 +1,3 @@
+PasswordMailer#forgot
+
+Find me in app/views/password_mailer/forgot.erb
