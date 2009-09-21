@@ -13,7 +13,7 @@ set :application, 'ridnaShkola'
 
 # file paths
 set :repository,  "git://github.com/danko/Ridna-Shkola-Registration.git" 
-set :deploy_to, "/home/dankone/ridnaShkola" 
+set :deploy_to, "/home/dankone/shkola" 
 
 # distribute your applications across servers (the instructions below put them
 # all on the same server, defined above as 'domain', adjust as necessary)

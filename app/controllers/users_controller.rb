@@ -25,9 +25,15 @@ class UsersController < ApplicationController
         @newPassword = @user.generate_password()
         @user.password = @newPassword
         @user.save
-        #email = PasswordMailer.deliver_forgot(@user, @newPassword)
+        email = PasswordMailer.deliver_forgot(@user, @newPassword)
         #render(:text => "<pre>" + email.encoded + "</pre>") 
-        flash[:notice] = 'Your new password ' + @newPassword + ' has been emailed to: ' + @user.email
+        
+        # This flash is for local registration on non-internet 
+        #flash[:notice] = 'Your new password ' + @newPassword + ' has been emailed to: ' + @user.email
+        
+        flash[:notice] = 'Your new password has been emailed to: ' + @user.email
+
+        # comment this redirect out to do local registration with emailed password
         #redirect_to(:controller => "admin", :action => "login_reset", :id => @user.id)      
     end
   end
