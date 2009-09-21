@@ -47,9 +47,15 @@ namespace :deploy do
 end
 
 # optional task to reconfigure databases
-after "deploy:update_code", :configure_database
-desc "copy database.yml into the current release path"
-task :configure_database, :roles => :app do
-  db_config = "#{deploy_to}/config/database.yml"
-  run "cp #{db_config} #{release_path}/config/database.yml"
+#after "deploy:update_code", :configure_database
+#desc "copy database.yml into the current release path"
+#task :configure_database, :roles => :app do
+#  db_config = "#{deploy_to}/config/database.yml"
+#  run "cp #{db_config} #{release_path}/config/database.yml"
+#end
+
+after "deploy:update_code", :configure_environment
+desc "copy config/environments/*.rb into the current release path"
+task :configure_environment, :roles => :app do
+  run "cp -r ~/rails/environments #{release_path}/config"
 end
