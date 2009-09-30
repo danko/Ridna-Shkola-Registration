@@ -3,17 +3,31 @@
 <table>
   <tr>
     <th>Family</th>
-    <th>Email</th>
+    <th>Primary Email</th>
+    <th>Father's Email</th> 
+    <th>Mother's Email</th>   
   </tr>
 <% i = 0 %>
 <% for user in @users %>
 	<% student = Student.find_by_userid( user.userid, :order => :firstname) %>
+	<% @current_parents = Parent.find_all_by_userid( user.userid) %>
+	<% mother_email = "" %>
+	<% father_email = "" %>
+	<% for parent in @current_parents %>
+		<%if parent.relationship == "Mother" %>
+		  <% mother_email = parent.email %>
+		<%elsif parent.relationship == "Father"%>
+			<%father_email = parent.email%>
+		<% end %>
+	<% end %>	
 
 	<% if student != nil && student.registration_year == "2009-2010" %>
 	<% i = i + 1 %>
   <tr>
     <td><%=h user.family %></td>
     <td><%=h user.email %></td>
+    <td><%=h father_email %></td>
+    <td><%=h mother_email %></td>    
   </tr>
 <%end%>
 <% end %>

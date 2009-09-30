@@ -1,0 +1,25 @@
+<% for user in @users %>
+	<% student = Student.find_by_userid( user.userid, :order => :firstname) %>
+
+	<% if student != nil && student.registration_year == "2009-2010" %>
+	  <% primary_email = user.email.downcase %>
+		<%=h primary_email %>;
+
+  	<% @current_parents = Parent.find_all_by_userid( user.userid) %>
+  	<% mother_email = "" %>
+  	<% father_email = "" %>
+  	<% for parent in @current_parents %>
+  		<%if parent.relationship == "Mother" %>
+  		  <% mother_email = parent.email.downcase %>
+  		<%elsif parent.relationship == "Father"%>
+  			<%father_email = parent.email.downcase %>
+  		<% end %>
+  	<% end %>		
+  	<% if father_email != "" && father_email != primary_email %>
+  	  <%=h father_email %>;
+  	<% end %>
+  	<% if mother_email != "" && mother_email != primary_email %>
+  	  <%=h mother_email %>;
+  	<% end %>  	
+	<%end%>
+<% end %>

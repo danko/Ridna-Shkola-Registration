@@ -6,3 +6,6 @@ tmp/**/*
 db/fixtures/
 db/fixtures_orig/
 config/environments/
+config/development.rb
+config/production.rb
+config/test.rb

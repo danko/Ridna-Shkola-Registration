@@ -245,6 +245,16 @@ end
     end
   end
 
+  def generateFullEmailList
+      @users = User.find(:all, :order => :family)
+
+    respond_to do |format|
+    format.html # index.html.erb
+    format.xml  { render :xml => @users }
+
+    end
+  end
+  
   def printUsers
       @users = User.find(:all, :order => :family)
 
