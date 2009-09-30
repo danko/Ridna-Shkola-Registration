@@ -18,7 +18,7 @@
   	<% if father_email != "" && father_email != primary_email %>
   	  <%=h father_email %>;
   	<% end %>
-  	<% if mother_email != "" && mother_email != primary_email %>
+  	<% if mother_email != "" && mother_email != primary_email && mother_email != father_email %>
   	  <%=h mother_email %>;
   	<% end %>  	
 	<%end%>
