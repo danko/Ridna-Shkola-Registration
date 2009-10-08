@@ -1,0 +1,23 @@
+<h1>Listing all students registered for 2009-2010 school year</h1>
+
+<table>
+  <tr>
+    <th>Gender</th>
+    <th>Birthdate</th>
+    <th>Newgrade</th>
+  </tr>
+
+<% i=0 %>
+<% for student in @students %>
+	<% i = i + 1 %>
+  <tr>
+    <td><%=h student.gender %></td>
+    <td><%=h student.birthdate %></td>    
+    <td><%=h student.newgrade %></td>
+
+
+  </tr>
+<%end%>
+</table>
+<br />
+<h1> Total number of students: <%= i %> </h1>

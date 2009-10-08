@@ -21,6 +21,14 @@ class StudentsController < ApplicationController
     end
   end 
 
+  def displayStudentBody
+    @students = Student.find(:all, :conditions => "registration_year = '2009-2010'", :order => :newgrade)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @students }
+    end
+  end
 
   def displayOldClasses
     #@students = Student.find(:all, :order => :newgrade)
