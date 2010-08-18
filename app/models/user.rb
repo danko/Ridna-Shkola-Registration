@@ -110,7 +110,7 @@ end
       checks = Check.find_all_by_userid(userid)
       if checks != nil
         for check in checks
-          if check != nil && check.updated_on > 2010-07-01
+          if check != nil && check.updated_on > (Date::new(2010, 7, 1))
             paid = paid + check.amount
           end
         end 
