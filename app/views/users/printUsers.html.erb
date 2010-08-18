@@ -1,4 +1,4 @@
-<h1>Listing all Users Registered for 2009-2010 School Year</h1>
+<h1>Listing all Users Registered for 2010-2011 School Year</h1>
 
 <table>
   <tr>
@@ -17,7 +17,7 @@
 <% for user in @users %>
 	<% student = Student.find_by_userid( user.userid, :order => :firstname) %>
 
-	<% if student != nil && student.registration_year == "2009-2010" %>
+	<% if student != nil && student.registration_year == "2010-2011" %>
 	<% i = i + 1 %>
   <tr>
     <td><%=h user.family %></td>

@@ -12,9 +12,15 @@
 </tr>
 <% end%>
   <tr>
-    <td>Number children enrolled in Ukrainian School and Svitlychka: </td> 
+    <td>Total number students enrolled in Ukrainian School and Svitlychka: </td> 
     <td><%= @current_user.num_of_children %> </td>
   </tr>
+<% if @current_user.num_adult_students > 0 %>
+  <tr>
+    <td>Number of adult students enrolled in Ukrainian School: </td> 
+    <td><%= @current_user.num_adult_students %> </td>
+  </tr>
+<% end %>
 
   <tr>
     <td>Tuition due Ukrainian School: </td>

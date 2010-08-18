@@ -254,6 +254,7 @@ end
 
     end
   end
+
   
   def printUsers
       @users = User.find(:all, :order => :family)

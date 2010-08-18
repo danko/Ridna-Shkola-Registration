@@ -2,11 +2,21 @@ require 'digest/sha1'
 
 
 class User < ActiveRecord::Base
-  
+
+  #information used to create a user account
   validates_presence_of     :login
   validates_presence_of     :email
   validates_presence_of     :family
-  validates_presence_of     :login
+  validates_presence_of     :userid
+  
+  # primary contact informaion for user
+  validates_presence_of     :street
+  validates_presence_of     :city
+  validates_presence_of     :state
+  validates_presence_of     :zip
+  validates_presence_of     :phonenum  
+
+  # make sure no two accounts share an primary email address, make sure no duplicate logins
   validates_uniqueness_of   :login
   validates_uniqueness_of   :userid
   validates_uniqueness_of   :email
@@ -16,11 +26,7 @@ class User < ActiveRecord::Base
 
   validate :password_non_blank
   
-  validates_presence_of     :street
-  validates_presence_of     :city
-  validates_presence_of     :state
-  validates_presence_of     :zip
-  validates_presence_of     :phonenum
+
   
   def self.authenticate(name, password)
     if name == nil || password == nil
@@ -58,12 +64,17 @@ end
   end
 
   def num_of_children
-    children = Student.find_all_by_userid(userid, :conditions => "registration_year='2009-2010'")
+    children = Student.find_all_by_userid(userid, :conditions => "registration_year='2010-2011'")
     return children.length
   end
   
   def num_in_svitlychka
-    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'Svitlychka' and registration_year='2009-2010'")
+    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'Svitlychka' and registration_year='2010-2011'")
+    return children.length
+  end
+
+  def num_adult_students
+    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'adult' and registration_year='2010-2011'")
     return children.length
   end
 
@@ -109,7 +120,7 @@ end
   end
 
   def calc_amount_due
-    num_childs = num_of_children
+    num_childs = num_of_children - num_adult_students
     if num_childs == 1
       due = 625
     elsif num_childs == 2
@@ -127,6 +138,7 @@ end
     if due < 0
       due = 0
     end
+    due = due + num_adult_students * 250
     return due
   end   
   

@@ -26,11 +26,11 @@ Login Account: <%=h @current_user.login %>
 
 
 
-<h1>Your Children</h1>
+<h1>Your Students</h1>
 
 <% form_for :user, :url => new_student_path do |form| %>
     <%= form.hidden_field(:id, :value => @current_user.id) %>
-    <%= form.submit "Add a Child" %>
+    <%= form.submit "Add a Student" %>
 <%end%>
 <table>
 	<tr>

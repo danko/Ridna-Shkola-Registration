@@ -92,6 +92,16 @@ class ParentsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def generateEmailListForAllParents
+      @parents = Parent.find(:all, :order => :lastname)
+
+    respond_to do |format|
+    format.html # index.html.erb
+    format.xml  { render :xml => @users }
+
+    end
+  end  
 
   private 
 

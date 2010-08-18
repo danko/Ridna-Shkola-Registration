@@ -25,14 +25,14 @@
   </p>
   <p>
     * <%= f.label "New Grade" %><br />
-  	<%= f.select(:newgrade, %w{Svitlychka Pidhotovcha Bilingual1 Bilingual2 1 2 3 4 5 6 7 8 9 10 11 }) %><br />	
+  	<%= f.select(:newgrade, %w{Svitlychka Pidhotovcha Bilingual1 Bilingual2 1 2 3 4 5 6 7 8 9 10 11 adult}) %><br />	
   </p>
   <p>
     * <%= f.label "Birth Date" %><br />
     <%= f.date_select :birthdate, :start_year=>1990, :order=>[:month, :day, :year]%>
   </p>
   <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "Register/Update" %>
   </p>
 <% end %>
 

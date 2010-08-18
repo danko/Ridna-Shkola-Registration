@@ -5,4 +5,14 @@ class ParentTest < ActiveSupport::TestCase
   test "the truth" do
     assert true
   end
+  
+  test "invalid Parent with empty attributes" do
+    parent = Parent.new
+    assert !parent.valid?
+    assert parent.errors.invalid?(:lastname)
+    assert parent.errors.invalid?(:firstname)
+    assert parent.errors.invalid?(:dayphone)
+    assert parent.errors.invalid?(:evephone)
+    assert parent.errors.invalid?(:email)
+  end
 end

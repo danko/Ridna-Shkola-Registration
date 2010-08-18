@@ -13,6 +13,11 @@ class CreateParents < ActiveRecord::Migration
       t.string :volunteerinterest
       t.string :profession
       t.string :hobbies
+      t.boolean :validated
+      t.boolean :teacher
+      t.boolean :uprava
+      t.boolean :employee
+      t.boolean  :registration_completed
 
       t.timestamps
     end
