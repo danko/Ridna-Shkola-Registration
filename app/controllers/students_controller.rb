@@ -129,8 +129,8 @@ class StudentsController < ApplicationController
 
 
     respond_to do |format|
-#      if @student.update_attributes(params[:student])
-      if @student.save
+     if @student.update_attributes(params[:student])
+ #     if @student.save
         flash[:notice] = 'Student was successfully registered/updated.'
         format.html { redirect_to(@other_user) }
         format.xml  { head :ok }

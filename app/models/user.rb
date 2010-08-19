@@ -49,12 +49,12 @@ class User < ActiveRecord::Base
   end
 
 def updateRegistration
-  current_students = Student.find_all_by_userid(userid)
+ # current_students = Student.find_all_by_userid(userid)
 
-  for student in current_students
-    student.registration_year = '2009-2010'
-    student.save
-  end
+#  for student in current_students
+#    student.registration_year = '2009-2010'
+#    student.save
+#  end
 end
 
 

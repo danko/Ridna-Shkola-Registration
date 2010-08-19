@@ -55,7 +55,7 @@ Login Account: <%=h @current_user.login %>
 	  <td><%=h student.newgrade %></td>
 	  <td><%=h student.birthdate %></td>
 	  <td><%=h student.registration_year %></td>	  
-	  <td><%= link_to 'Edit', edit_student_path(student) %></td>
+	  <td><%= link_to 'Register/Edit', edit_student_path(student) %></td>
 	  <td><%= link_to 'Delete', student, :confirm => 'Are you sure?', :method => :delete %></td>
 	</tr>
 <% end %>

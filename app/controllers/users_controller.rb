@@ -89,10 +89,10 @@ class UsersController < ApplicationController
     @current_user = get_other_user(session[:other_user_id])
     @current_students = Student.find_all_by_userid( @current_user.userid, :order => :firstname)
 
-    for student in @current_students
-      student.registration_year = '2009-2010'
-      student.save
-    end
+    #for student in @current_students
+    #  student.registration_year = '2010-2011'
+    #  student.save
+    #end
 
     @current_user.amountdue = calculate_amount_due
     @current_user.amountpaid = 0
