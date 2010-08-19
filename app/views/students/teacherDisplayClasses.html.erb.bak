@@ -26,7 +26,7 @@ PaniTunia@verizon.net
 Number of Students:  <%= i %>
 
 
-<h1>Elementary School</h1>
+<h1>Lower Classes</h1>
 <% i=0 %>
 <h3>Pidhotovcha</h3>
 Mrs. Lida Futey-Murphy<br/>
@@ -65,9 +65,9 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>1st Grade</h3>
-Mrs. Lilia Vaichekauskus<br/>
-703-671-1409<br/>
-VaichekauL@usa.redcross.org
+Mrs. Olha Onyshko<br/>
+301-365-7332<br/>
+olia@verizon.net
 <br />
 <br />
 <% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '1'", :order => :lastname)
@@ -138,9 +138,9 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>4th Grade</h3>
-Mrs. Maria Nyniuk<br/>
-<br/>
-svitozarnenyuk@verizon.net
+Ms. Liana Tsvyetova<br/>
+202-577-1698<br/>
+lianatsv@gmail.com.com
 <br />
 <br />
 <% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '4'", :order => :lastname)
@@ -157,8 +157,7 @@ Number of Students:  <%= i %>
 <% i=0 %>
 <h3>5th Grade</h3>
 Mrs. Olya Golovchak<br/>
-410-870-2141<br/>
-ogolovchak@gmail.com
+410-870-2141
 <br />
 <br />
 <% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '5'", :order => :lastname)
@@ -172,7 +171,7 @@ ogolovchak@gmail.com
 </table>
 Number of Students:  <%= i %>
 
-<h1>Middle School</h1>
+<h1>Upper Classes</h1>
 <h3>6th Grade</h3>
 <% i=0 %>
 <% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '6'", :order => :lastname)
@@ -212,32 +211,6 @@ Number of Students:  <%= i %>
 </table>
 Number of Students:  <%= i %>
 
-<h1>Middle School faculty</h1>
-<h3>History</h3>
-Mrs. Marika Jurach<br/>
-703-864-3723<br/>
-marikaju@starpower.net<br/>
-<br/>
-
-<h3>Language and Literature</h3>
-Mrs. Olena Shevchenko<br/>
-301-229-1220<br/>
-oshevchenko@verizon.net<br/>
-<br/>
-
-<h3>Geography</h3>
-Ms. Olia Kushnir<br/>
-<br/>
-olhakushnir@yahoo.com<br/>
-<br/>
-
-<h3>Culture</h3>
-Mr. Oleh Voloshen<br/>
-<br/>
-verohal@ukr.net<br/>
-<br/>
-
-<h1>High School</h1>
 <h3>9th Grade</h3>
 <% i=0 %>
 <% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '9'", :order => :lastname)
@@ -281,16 +254,36 @@ Number of Students:  <%= i %>
 <% i=0 %>
 <% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = 'adult'", :order => :lastname)
 %>
+<table>
 <% for student in @students %>
-  <%= student.create_teacher_display %>  <% i = i + 1 %>
+  <%= student.create_teacher_display %>
+  <% i = i + 1 %>
   <%total = total + 1 %>
 <% end %>
-<br/>
+</table>
 Number of Students:  <%= i %>
 <br />
+<h1> Total number of students: <%= total %> </h1>
 
+<h3>Language/Grammar Teachers</h3>
+Mrs. Tetiana Kindzelska<br/>
+313-452-1446<br/>
+tapki@jhu.edu<br/>
+<br/>
 
-<h1>High School Faculty</h1>
+Ms. Tetiana Littlefield<br/>
+571-282-5833<br/>
+luchanka42@hotmail.com<br/>
+<br/>
+Mr. Theodore Caryk<br/>
+301-840-1713<br/>
+<br/>
+
+<h3>History Teachers</h3>
+Mrs. Marika Jurach<br/>
+703-864-3723<br/>
+marikaju@starpower.net<br/>
+<br/>
 
 <h3>History/Literature</h3>
 Mrs. Nusia Kerda<br/>
@@ -299,101 +292,87 @@ kerda@aol.com<br/>
 <br/>
 
 <h3>Culture</h3>
-Ms. Olena Ftomova<br/>
-202-492-7575<br/>
-oftomova@hotmail.com<br/>
+Ms. Veronika Galetska<br/>
+202-487-6038<br/>
+verohal@ukr.net<br/>
 <br/>
 
-<h3>Literature 9-10</h3>
-Mr. Oles Bereznyj<br/>
-703-534-0309<br/>
-oles@berezhny.net<br/>
+<h3>Literature</h3>
+Mr. Taras Lychuk<br/>
 <br/>
-
-
-<h3>Language for Matura</h3>
-Mr. Theodore Caryk<br/>
-301-840-1713<br/>
+Mr. Stepan Kerda<br/>
+703-780-5725<br/>
+kerda@aol.com<br/>
 <br/>
-
-<h3>Written and Spoken Ukrainian</h3>
-Mrs. Olena Shevchenko<br/>
-301-229-1220<br/>
-oshevchenko@verizon.net<br/>
+<h3>Geography</h3>
+Ms. Olia Kushnir<br/>
+olhakushnir@yahoo.com<br/>
 <br/>
 
 
-<h1>Performing Arts, Ethics and Literacy Programming</h1>
 
-<h3>Music grades K-11</h3>
+<h1>Additional Faculty</h1>
+
 Dr. Darka Nebesh<br/>
+Music and Cultural Arts Committee co-chair<br/>
 410-997-5382<br/>
 dnebesh@hotmail.com<br/>
 <br/>
-
-
-<h3>Ethics and Religion</h3>
-Mrs. Maria Nyniuk<br/>
+Fr. Taras Lonchyna<br/>
+Ethics and Culture<br/>
+301-421-1739<br/>
+lonchtar@starpower.net<br/>
 <br/>
-svitozarnenyuk@verizon.net
-<br />
-<br />
-	
-<h3>Ethics and Religion</h3>
-Mrs. Luba Campion<br/>
-<br/>
-lbcampion@yahoo.com
-<br />
-<br />
-
-<h3>Resource Teacher and Libraian</h3>
 Mrs. Sonia Karmazyn<br/>
+Cultural Arts Committee co-chair<br/>
 301-260-9630<br/>
 karmazyns@yahoo.com<br/>
 <br/>
-
-<h1> Total number of students registered for 2010-2011: <%= total %> </h1>
-
+Dr. Maia Saj Schmidt<br/>
+Resource Teacher<br/>
+703-326-9518<br/>
+msajschmidt@gmail.com<br/>
+<br/>
+Mrs. Tanya Murza<br/>
+Teaching Assistant<br/>
+301-779-2284<br/>
+tanya_murza@yahoo<br/>
+<br/>
+Mrs. Myrosia Kotyk<br/>
+Teaching Assistant<br/>
+Myrosiakotyk@verizon.net<br/>
+<br/>
 <h1>Administration</h1>
-
-<h3>Principal</h3>
-Renata Harmatiy<br/>
-(410) 715-5635<br/>
-renyah@gmail.com<br/>
+Mrs. Melana Zyla Vickers<br/>
+Director<br/>
+703-798-7837<br/>
+vickersm@cox.net<br/>
 <br/>
-
-<h3>Vice Principal</h3>
-Andrea Bilaniuk<br/>
-(703)272-3979<br/>
-ivandrea@cox.net<br/>
-<br/>
-
-<h3>President, Batkivsky Komitet</h3>
-Sarah Tweed<br/>
-(703) 860-1061<br/>
-olehsarah@verizon.net<br/>
-<br/>
-
-<h3>Treasurer</h3>
-Oleksa Breslawec<br/>
-(301) 983-0168<br/>
+Mr. Oleksa Breslawec<br/>
+Treasurer<br/>
+301-983-0168<br/>
 opb9505@verizon.net<br/>
 <br/>
-
-<h3>Volunteer Coordinator</h3>
-Julian Zahalak<br/>
-(301) 251-5270<br/>
-julianzahalak@yahoo.com<br/>
+Mrs. Olena Shevchenko<br/>
+President, Batkivsky Komitet<br/>
+301-229-1220<br/>
+oshevchenko@verizon.net<br/>
 <br/>
-
-
-<h3>Board Members</h3>
-Andrew Sloniewsky<br/>
-(703) 528-4626<br/>
-amsloniewsky@verizon.net<br/>
+Mr. Francesco “Franko” Piazza<br/>
+Volunteer Coordinator<br/>
+703-624-7741<br/>
+fp_brklyn@hotmail.com<br/>
 <br/>
-
-Bohdan Shevchik<br/>
-(410) 703-7369<br/>
+Mr. Theodore Caryk<br/>
+Special Advisor<br/>
+301-840-1713<br/>
+<br/>
+Mr. Roman S. Ponos<br/>
+Board Member<br/>
+703-867-6847<br/>
+vdoma@verizon.net<br/>
+<br/>
+Mr. Bohdan Shevchik<br/>
+Board Member<br/>
+410-703-7369<br/>
 bo@evropashop.com<br/>
-<br/>
