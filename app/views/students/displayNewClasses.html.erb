@@ -9,7 +9,7 @@
 <% grade=""%>
 
 <h1> Svitlychka</h1>
-Mrs. Tunia Yearout<br />
+Tunia Yearout<br />
 703-430-2693<br />
 PaniTunia@verizon.net 
 <br />
@@ -28,7 +28,7 @@ Number of Students:  <%= i %>
 <h1>Elementary School</h1>
 <% i=0 %>
 <h3>Pidhotovcha</h3>
-Mrs. Lida Futey-Murphy<br/>
+Lida Futey-Murphy<br/>
 410-647-8264<br/>
 futeymurphy@comcast.net
 <br />
@@ -45,7 +45,7 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>Bilingual - 1</h3>
-Mrs. Larissa Fontana<br/>
+Larissa Fontana<br/>
 301-365-2490<br/>
 DJFplsurg@AOL.com
 <br />
@@ -62,7 +62,7 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>1st Grade</h3>
-Mrs. Lilia Vaichekauskus<br/>
+Lilia Vaichekauskus<br/>
 703-671-1409<br/>
 VaichekauL@usa.redcross.org
 <br />
@@ -80,7 +80,7 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>2nd Grade</h3>
-Mrs. Lesia Koval<br/>
+Lesia Koval<br/>
 301-309-8410<br/>
 lesiakov@netscape.net
 <br />
@@ -97,7 +97,7 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>Bilingual - 2</h3>
-Dr. Marta Kowalczyk<br/>
+Marta Kowalczyk<br/>
 703-533-9879<br/>
 mkowalczyk@cox.net
 <br />
@@ -114,7 +114,7 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>3rd Grade</h3>
-Mrs. Talia Cybyk<br/>
+Talia Cybyk<br/>
 410-884-5984<br/>
 cybyktz@gmail.com
 <br />
@@ -131,10 +131,9 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>4th Grade</h3>
-Mrs. Maria Nyniuk<br/>
-<br/>
-svitozarnenyuk@verizon.net
-<br />
+Maria Nyniuk<br/>
+202-396-8541<br/>
+svitozarnenyuk@verizon.net<br />
 <br />
 <% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '4'", :order => :lastname)
 %>
@@ -148,7 +147,7 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>5th Grade</h3>
-Mrs. Olya Golovchak<br/>
+Olya Golovchak<br/>
 410-870-2141<br/>
 ogolovchak@gmail.com
 <br />
@@ -202,26 +201,26 @@ Number of Students:  <%= i %>
 
 <h1>Middle School faculty</h1>
 <h3>History</h3>
-Mrs. Marika Jurach<br/>
+Marika Jurach<br/>
 703-864-3723<br/>
 marikaju@starpower.net<br/>
 <br/>
 
 <h3>Language and Literature</h3>
-Mrs. Olena Shevchenko<br/>
+Olena Shevchenko<br/>
 301-229-1220<br/>
 oshevchenko@verizon.net<br/>
 <br/>
 
 <h3>Geography</h3>
-Ms. Olia Kushnir<br/>
-<br/>
+Olia Kushnir<br/>
+301-226-7927<br/>
 olhakushnir@yahoo.com<br/>
 <br/>
 
 <h3>Culture</h3>
-Mr. Oleh Voloshen<br/>
-<br/>
+Oleh Voloshen<br/>
+443-315-8873<br/>
 verohal@ukr.net<br/>
 <br/>
 
@@ -262,83 +261,115 @@ Number of Students:  <%= i %>
 <br/>
 Number of Students:  <%= i %>
 
-<h3>Ukrainian Language for Adults</h3>
-<% i=0 %>
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = 'adult'", :order => :lastname)
-%>
-<% for student in @students %>
-  <%=h student.lastname %>, <%=h student.firstname %><br/>
-  <% i = i + 1 %>
-  <%total = total + 1 %>
-<% end %>
-<br/>
-Number of Students:  <%= i %>
-<br />
-
-
 <h1>High School Faculty</h1>
 
 <h3>History/Literature</h3>
-Mrs. Nusia Kerda<br/>
+Nusia Kerda<br/>
 703-780-5725<br/>
 kerda@aol.com<br/>
 <br/>
 
 <h3>Culture</h3>
-Ms. Olena Ftomova<br/>
+Olena Ftomova<br/>
 202-492-7575<br/>
 oftomova@hotmail.com<br/>
 <br/>
 
 <h3>Literature 9-10</h3>
-Mr. Oles Bereznyj<br/>
+Oles Bereznyj<br/>
 703-534-0309<br/>
 oles@berezhny.net<br/>
 <br/>
 
 
 <h3>Language for Matura</h3>
-Mr. Theodore Caryk<br/>
+Theodore Caryk<br/>
 301-840-1713<br/>
 <br/>
 
 <h3>Written and Spoken Ukrainian</h3>
-Mrs. Olena Shevchenko<br/>
+Olena Shevchenko<br/>
 301-229-1220<br/>
 oshevchenko@verizon.net<br/>
 <br/>
 
+<% adultNumberOfStudents = 0 %>
+<h1>Adult Classes</h1>
+<h3>Ukrainian Language for Adults - Fall</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = 'adultFall'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%total = total + 1 %>
+  <%adultNumberOfStudents = adultNumberOfStudents + 1%>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+<br />
+
+<h3>Ukrainian Language for Adults - Spring</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = 'adultSpring'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%adultNumberOfStudents = adultNumberOfStudents + 1%>
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+<br />
+
+<h3>Ukrainian Language for Adults - Fall and Spring</h3>
+<% i=0 %>
+<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = 'adultBoth'", :order => :lastname)
+%>
+<% for student in @students %>
+  <%=h student.lastname %>, <%=h student.firstname %><br/>
+  <% i = i + 1 %>
+  <%adultNumberOfStudents = adultNumberOfStudents + 1%>  
+  <%total = total + 1 %>
+<% end %>
+<br/>
+Number of Students:  <%= i %>
+<br />
+
+<h1> Registration </h1>
+<h3>Total number of children registered for 2010-2011: <%= total - adultNumberOfStudents %> </h3>
+<h3>Total number of adults registered for 2010-2011: <%= adultNumberOfStudents %> </h3>
+<h3>Total number of students registered for 2010-2011: <%= total %> </h3>
 
 <h1>Performing Arts, Ethics and Literacy Programming</h1>
 
 <h3>Music grades K-11</h3>
-Dr. Darka Nebesh<br/>
+Darka Nebesh<br/>
 410-997-5382<br/>
 dnebesh@hotmail.com<br/>
 <br/>
 
 
 <h3>Ethics and Religion</h3>
-Mrs. Maria Nyniuk<br/>
-<br/>
+Maria Nyniuk<br/>
+202-396-8541<br/>
 svitozarnenyuk@verizon.net
 <br />
 <br />
 	
 <h3>Ethics and Religion</h3>
-Mrs. Luba Campion<br/>
-<br/>
+Luba Campion<br/>
+301-871-2352<br/>
 lbcampion@yahoo.com
 <br />
 <br />
 
 <h3>Resource Teacher and Libraian</h3>
-Mrs. Sonia Karmazyn<br/>
+Sonia Karmazyn<br/>
 301-260-9630<br/>
 karmazyns@yahoo.com<br/>
 <br/>
-
-<h1> Total number of students registered for 2010-2011: <%= total %> </h1>
 
 <h1>Administration</h1>
 

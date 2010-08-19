@@ -73,11 +73,25 @@ end
     return children.length
   end
 
-  def num_adult_students
-    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'adult' and registration_year='2010-2011'")
+  def num_adult_fall
+    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'adultFall' and registration_year='2010-2011'")
     return children.length
   end
 
+  def num_adult_students
+    return num_adult_spring + num_adult_fall + num_adult_both
+  end
+  
+  def num_adult_spring
+    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'adultSpring' and registration_year='2010-2011'")
+    return children.length
+  end
+
+  def num_adult_both
+    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'adultBoth' and registration_year='2010-2011'")
+    return children.length
+  end
+    
   def num_in_svitlychka_all
     children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'Svitlychka'")
     return children.length
@@ -138,7 +152,9 @@ end
     if due < 0
       due = 0
     end
-    due = due + num_adult_students * 250
+    due = due + num_adult_fall * 250
+    due = due + num_adult_spring * 250
+    due = due + num_adult_both * 500
     return due
   end   
   
