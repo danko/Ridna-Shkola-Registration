@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
   end
 
   def displayNewStudents
-    @students = Student.find(:all, :conditions => "registration_year = '2010-2011'", :order => :lastname)
+    @students = Student.find(:all, :conditions => AdminController::RegistrationYearString, :order => :lastname)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
   end 
 
   def displayStudentBody
-    @students = Student.find(:all, :conditions => "registration_year = '2010-2011'", :order => :newgrade)
+    @students = Student.find(:all, :conditions => AdminController::RegistrationYearString, :order => :newgrade)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -39,7 +39,7 @@ class StudentsController < ApplicationController
     end
   end  
   def displayNewClasses
-    #@students = Student.find(:all, :conditions => "registration_year = '2010-2011'", :order => :newgrade)
+    #@students = Student.find(:all, :conditions => AdminController::RegistrationYearString, :order => :newgrade)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -48,7 +48,7 @@ class StudentsController < ApplicationController
   end
   
   def teacherDisplayClasses
-    #@students = Student.find(:all, :conditions => "registration_year = '2009-2010'", :order => :newgrade)
+    #@students = Student.find(:all, :conditions => AdminController::RegistrationYearString, :order => :newgrade)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -90,7 +90,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(params[:student])
     #@student.userid = session[:other_user_id]
-    @student.registration_year = '2010-2011'
+    @student.registration_year = AdminController::SchoolYear
     @other_user = get_other_user(@student.userid) # find the user for the added contact
     
     #@other_user = get_other_user(session[:other_user_id]) 
@@ -124,7 +124,7 @@ class StudentsController < ApplicationController
   # PUT /students/1.xml
   def update
     @student = Student.find(params[:id])
-       @student.registration_year = '2010-2011'
+       @student.registration_year = AdminController::SchoolYear
     @other_user = get_other_user(session[:other_user_id]) # find the user for the edited contact
 
 

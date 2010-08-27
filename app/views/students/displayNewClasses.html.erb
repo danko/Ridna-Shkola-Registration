@@ -1,6 +1,6 @@
 
 
-<h1>Listing all 2010-2011 classes</h1>
+<h1>Listing all <%=AdminController::SchoolYear%> classes</h1>
 
 
 
@@ -14,7 +14,7 @@ Tunia Yearout<br />
 PaniTunia@verizon.net 
 <br />
 <br />
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = 'Svitlychka'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = 'Svitlychka'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -33,7 +33,7 @@ Lida Futey-Murphy<br/>
 futeymurphy@comcast.net
 <br />
 <br />
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = 'Pidhotovcha'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = 'Pidhotovcha'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -50,7 +50,7 @@ Larissa Fontana<br/>
 DJFplsurg@AOL.com
 <br />
 <br />
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = 'Bilingual1'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = 'Bilingual1'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -67,7 +67,7 @@ Lilia Vaichekauskus<br/>
 VaichekauL@usa.redcross.org
 <br />
 <br />
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '1'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '1'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -85,7 +85,7 @@ Lesia Koval<br/>
 lesiakov@netscape.net
 <br />
 <br />
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '2'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '2'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -102,7 +102,7 @@ Marta Kowalczyk<br/>
 mkowalczyk@cox.net
 <br />
 <br />
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = 'Bilingual2'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = 'Bilingual2'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -119,7 +119,7 @@ Talia Cybyk<br/>
 cybyktz@gmail.com
 <br />
 <br />
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '3'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '3'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -135,7 +135,7 @@ Maria Nyniuk<br/>
 202-396-8541<br/>
 svitozarnenyuk@verizon.net<br />
 <br />
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '4'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '4'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -152,7 +152,7 @@ Olya Golovchak<br/>
 ogolovchak@gmail.com
 <br />
 <br />
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '5'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '5'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -165,7 +165,7 @@ Number of Students:  <%= i %>
 <h1>Middle School</h1>
 <h3>6th Grade</h3>
 <% i=0 %>
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '6'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '6'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -177,7 +177,7 @@ Number of Students:  <%= i %>
 
 <h3>7th Grade</h3>
 <% i=0 %>
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '7'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '7'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -189,7 +189,7 @@ Number of Students:  <%= i %>
 
 <h3>8th Grade</h3>
 <% i=0 %>
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '8'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '8'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -227,7 +227,7 @@ verohal@ukr.net<br/>
 <h1>High School</h1>
 <h3>9th Grade</h3>
 <% i=0 %>
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '9'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '9'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -239,7 +239,7 @@ Number of Students:  <%= i %>
 
 <h3>10th Grade</h3>
 <% i=0 %>
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '10'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '10'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -251,7 +251,7 @@ Number of Students:  <%= i %>
 
 <h3>11th Grade</h3>
 <% i=0 %>
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = '11'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '11'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -297,7 +297,7 @@ oshevchenko@verizon.net<br/>
 <h1>Adult Classes</h1>
 <h3>Ukrainian Language for Adults - Fall</h3>
 <% i=0 %>
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = 'adultFall'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = 'adultFall'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -311,7 +311,7 @@ Number of Students:  <%= i %>
 
 <h3>Ukrainian Language for Adults - Spring</h3>
 <% i=0 %>
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = 'adultSpring'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = 'adultSpring'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -325,7 +325,7 @@ Number of Students:  <%= i %>
 
 <h3>Ukrainian Language for Adults - Fall and Spring</h3>
 <% i=0 %>
-<% @students = Student.find(:all, :conditions => "registration_year = '2010-2011' and newgrade = 'adultBoth'", :order => :lastname)
+<% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = 'adultBoth'", :order => :lastname)
 %>
 <% for student in @students %>
   <%=h student.lastname %>, <%=h student.firstname %><br/>
@@ -338,9 +338,9 @@ Number of Students:  <%= i %>
 <br />
 
 <h1> Registration </h1>
-<h3>Total number of children registered for 2010-2011: <%= total - adultNumberOfStudents %> </h3>
-<h3>Total number of adults registered for 2010-2011: <%= adultNumberOfStudents %> </h3>
-<h3>Total number of students registered for 2010-2011: <%= total %> </h3>
+<h3>Total number of children registered for <%=AdminController::SchoolYear%>: <%= total - adultNumberOfStudents %> </h3>
+<h3>Total number of adults registered for <%=AdminController::SchoolYear%>: <%= adultNumberOfStudents %> </h3>
+<h3>Total number of students registered for <%=AdminController::SchoolYear%>: <%= total %> </h3>
 
 <h1>Performing Arts, Ethics and Literacy Programming</h1>
 

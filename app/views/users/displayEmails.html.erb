@@ -1,4 +1,4 @@
-<h1>Listing Emails for all Registered Families for 2010-2011 School Year</h1>
+<h1>Listing Emails for all Registered Families for <%=AdminController::SchoolYear%> School Year</h1>
 
 <table>
   <tr>
@@ -21,7 +21,7 @@
 		<% end %>
 	<% end %>	
 
-	<% if student != nil && student.registration_year == "2010-2011" %>
+	<% if student != nil && student.registration_year == AdminController::SchoolYear %>
 	<% i = i + 1 %>
   <tr>
     <td><%=h user.family %></td>

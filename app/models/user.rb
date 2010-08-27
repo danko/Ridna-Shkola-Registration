@@ -52,7 +52,7 @@ def updateRegistration
  # current_students = Student.find_all_by_userid(userid)
 
 #  for student in current_students
-#    student.registration_year = '2009-2010'
+#    student.registration_year = AdminController::SchoolYear
 #    student.save
 #  end
 end
@@ -64,17 +64,17 @@ end
   end
 
   def num_of_children
-    children = Student.find_all_by_userid(userid, :conditions => "registration_year='2010-2011'")
+    children = Student.find_all_by_userid(userid, :conditions => AdminController::RegistrationYearString)
     return children.length
   end
   
   def num_in_svitlychka
-    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'Svitlychka' and registration_year='2010-2011'")
+    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'Svitlychka' and " + AdminController::RegistrationYearString)
     return children.length
   end
 
   def num_adult_fall
-    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'adultFall' and registration_year='2010-2011'")
+    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'adultFall' and " + AdminController::RegistrationYearString)
     return children.length
   end
 
@@ -83,12 +83,12 @@ end
   end
   
   def num_adult_spring
-    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'adultSpring' and registration_year='2010-2011'")
+    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'adultSpring' and " + AdminController::RegistrationYearString)
     return children.length
   end
 
   def num_adult_both
-    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'adultBoth' and registration_year='2010-2011'")
+    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'adultBoth' and " + AdminController::RegistrationYearString)
     return children.length
   end
     
@@ -124,7 +124,7 @@ end
       checks = Check.find_all_by_userid(userid)
       if checks != nil
         for check in checks
-          if check != nil && check.updated_on > (Date::new(2010, 7, 1))
+          if check != nil && check.updated_on > AdminController::NewCheckDate
             paid = paid + check.amount
           end
         end 

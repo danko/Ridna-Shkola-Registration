@@ -3,6 +3,17 @@ class AdminController < ApplicationController
   # just display the form and wait for user to
   # enter a name and password
   
+  # Strings represnting the previous school year
+  PreviousSchoolYear = '2009-2010'
+  PreviousRegistrationYearString = "registration_year = '" + AdminController::PreviousSchoolYear + "'"
+  
+  # Strings representing the current School Year
+  SchoolYear = '2010-2011'
+  RegistrationYearString = "registration_year = '" + AdminController::SchoolYear + "'"
+  
+  # Date object representing checks for the new school year, assume payments complete by 1 july each year
+  NewCheckDate = Date::new(2010, 7, 1)
+  
   def login
     if request.post?
       user = User.authenticate(params[:name], params[:password])

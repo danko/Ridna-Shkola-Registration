@@ -1,7 +1,7 @@
 <% for parent in @parents %>
 <% student = Student.find_by_userid( parent.userid) %>
 
-<% if student != nil && student.registration_year == "2010-2011" %>
+<% if student != nil && student.registration_year == AdminController::SchoolYear %>
 
 		<%= parent.lastname %>, <%= parent.firstname%>, <%= parent.email%><br>
 <% end %>

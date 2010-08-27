@@ -1,4 +1,4 @@
-<h1>Listing all Users Registered for 2010-2011 School Year</h1>
+<h1>Listing all Users Registered for <%=AdminController::SchoolYear%> School Year</h1>
 
 <table>
   <tr>
@@ -9,15 +9,18 @@
 	<th>Balance </th>
 	<th>Svitlychka</th>
 	<th>NumInSvitlychka</th>
+	<th>NumAdultStudents</th>
 	<th>NumInRidnaShkola</th>
+	<th>Total</th>
   </tr>
 <% i = 0 %>
 <% studentsInShkola = 0%>
 <% studentsInSvitlychka = 0%>
+<% adultStudents = 0%>
 <% for user in @users %>
 	<% student = Student.find_by_userid( user.userid, :order => :firstname) %>
 
-	<% if student != nil && student.registration_year == "2010-2011" %>
+	<% if student != nil && student.registration_year == AdminController::SchoolYear %>
 	<% i = i + 1 %>
   <tr>
     <td><%=h user.family %></td>
@@ -27,16 +30,22 @@
 	<td><%=h number_to_currency(user.calc_balance) %></td>
 	<td><%=h number_to_currency(user.num_in_svitlychka * 400) %></td>
     <td><%=h user.num_in_svitlychka %></td>
-    <td><%=h user.num_of_children - user.num_in_svitlychka %></td>
+	<td><%=h user.num_adult_students %></td>
+    <td><%=h user.num_of_children - user.num_in_svitlychka  - user.num_adult_students%></td>
+	<td><%=h user.num_of_children%></td>
   </tr>
-	<% studentsInShkola = studentsInShkola + user.num_of_children - user.num_in_svitlychka %>
+	<% studentsInShkola = studentsInShkola + user.num_of_children - user.num_in_svitlychka - user.num_adult_students%>
 	<% studentsInSvitlychka = studentsInSvitlychka + user.num_in_svitlychka %>
+	<% adultStudents = adultStudents + user.num_adult_students%>
 <%end%>
 <% end %>
 </table>
 
 <br />
 <h3> Total number of users: <%= i %></h3>
-<h3> Students in Ridna Shkola: <%= studentsInShkola %></h3>
 <h3> Students in Svitlychka: <%= studentsInSvitlychka %></h3>
+<h3> Adult Students: <%= adultStudents %></h3>
+<h3> Children in Ridna Shkola: <%= studentsInShkola %></h3>
+<h3> Total registered: <%= studentsInSvitlychka + adultStudents + studentsInShkola%></h3>
+
 

@@ -42,6 +42,7 @@ class UsersController < ApplicationController
     @current_user = User.find(session[:user_id])
     session[:other_user_id] = @current_user.userid
     
+    puts AdminController::SchoolYear
 #    if @current_user[:admin]
 #      @users = User.find(:all, :order => :family)
 #   else
@@ -90,7 +91,7 @@ class UsersController < ApplicationController
     @current_students = Student.find_all_by_userid( @current_user.userid, :order => :firstname)
 
     #for student in @current_students
-    #  student.registration_year = '2010-2011'
+    #  student.registration_year = 'AdminController::SchoolYear
     #  student.save
     #end
 

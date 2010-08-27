@@ -22,8 +22,8 @@
       <% if session[:user_id] %>
       	<%= link_to 'Show My Account', :controller => 'users' %> <br />
       	<%= link_to 'Change My Password', :controller => 'users' , :action => 'changePassword', :id => "all"%> <br /><br/>
-		<%= link_to 'Display 2010-2011 Classes', :controller => '/students', :action => 'displayNewClasses', :id => "all" %> <br />
-		<%= link_to 'Display 2009-2010 Classes', :controller => '/students', :action => 'displayOldClasses', :id => "all" %> <br />
+		<%= link_to 'Display ' + AdminController::SchoolYear + ' Classes', :controller => '/students', :action => 'displayNewClasses', :id => "all" %> <br />
+		<%= link_to 'Display ' + AdminController::PreviousSchoolYear + ' Classes', :controller => '/students', :action => 'displayOldClasses', :id => "all" %> <br />
 		<%= link_to 'Display Online Address Book', :controller => '/users', :action => 'onlineaddressbook', :id => "all" %> <br />
 
 
@@ -38,7 +38,7 @@
 			<%= link_to 'Print Registered Users', :controller => '/users', :action => 'printUsers', :id => "all" %> <br /><br/>
         	<%= link_to 'Display all Students', :controller => 'students' %> <br />
 			<%= link_to 'Display all Parents', :controller => 'parents' %> <br />
-			<%= link_to 'Display 2010-2011 Students', :controller => '/students', :action => 'displayNewStudents', :id => "all" %> <br />
+			<%= link_to 'Display ' + AdminController::SchoolYear + ' Students', :controller => '/students', :action => 'displayNewStudents', :id => "all" %> <br />
   		<%= link_to 'Teacher Display of Classes', :controller => '/students', :action => 'teacherDisplayClasses', :id => "all" %> <br />
 
 			<br/>

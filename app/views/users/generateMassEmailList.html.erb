@@ -1,7 +1,8 @@
+<h1>Email list of all primary email addresses for students registered for the <%=AdminController::SchoolYear%> school year</h1>
 <% for user in @users %>
 	<% student = Student.find_by_userid( user.userid, :order => :firstname) %>
 
-	<% if student != nil && student.registration_year == "2010-2011" %>
+	<% if student != nil && student.registration_year == AdminController::SchoolYear %>
 		<%=h user.email %>;
 	<%end%>
 <% end %>
