@@ -47,11 +47,13 @@
 
 <% @current_checks = Check.find_all_by_userid( @current_user.userid, :order => :checknumber) %>
 <% for check in @current_checks %>
+<% if check != nil && check.updated_on > AdminController::NewCheckDate %>
 <tr>
   <td><%=h number_with_precision(check.checknumber, 0) %></td>
   <td><%=h number_to_currency(check.amount) %></td>
   <td><%=h check.updated_on %></td>
 </tr>
+<% end %>
 <%end%>
 </table>
 <%end%>	
