@@ -152,9 +152,9 @@ end
     if due < 0
       due = 0
     end
-    due = due + num_adult_fall * 250
-    due = due + num_adult_spring * 250
-    due = due + num_adult_both * 500
+    due = due + num_adult_fall * 300
+    due = due + num_adult_spring * 300
+    due = due + num_adult_both * 600
     return due
   end   
   

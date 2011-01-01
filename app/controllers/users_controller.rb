@@ -294,6 +294,15 @@ end
     end
   end
 
+  def addressbookZipcode
+      @users = User.find(:all, :order => :zip)
+    respond_to do |format|
+    format.html # index.html.erb
+    format.xml  { render :xml => @users }
+
+    end
+  end
+  
   def onlineaddressbook
     @users = User.find(:all, :conditions => ['onlineaddressbook = ?', true], :order => :family)
     respond_to do |format|
