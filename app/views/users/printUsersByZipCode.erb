@@ -1,0 +1,18 @@
+<h1>Listing Number of Families Registered for <%=AdminController::SchoolYear%> School Year by zipcode</h1>
+
+
+<% zipcode = "none" %>
+<% numInZipcode = 0 %>
+<% for user in @users %>
+	<% student = Student.find_by_userid( user.userid, :order => :firstname) %>
+
+	<% if student != nil && student.registration_year == AdminController::SchoolYear %>
+		<% if user.zip != zipcode %>
+			<h3> <%= zipcode %>     <%= numInZipcode %></h3>
+			<% zipcode = user.zip %>
+			<% numInZipcode = 0 %>
+		<%end%>
+		<% numInZipcode = numInZipcode + 1 %>
+	<%end%>
+<%end%>
+<h3> <%= zipcode%>     <%= numInZipcode %></h3>

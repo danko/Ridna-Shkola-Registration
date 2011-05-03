@@ -267,6 +267,26 @@ end
     end
   end
 
+  def printUsersByZipCode
+      @users = User.find(:all, :order => :zip)
+
+    respond_to do |format|
+    format.html # index.html.erb
+    format.xml  { render :xml => @users }
+
+    end
+  end
+  
+  def printUsersByState
+      @users = User.find(:all, :order => :state)
+
+    respond_to do |format|
+    format.html # index.html.erb
+    format.xml  { render :xml => @users }
+
+    end
+  end
+  
   
   def viewBilling
     # @global_user = User.find_by_userid(session[:user_id]) # user that logged in

@@ -35,7 +35,10 @@
         	<%= link_to 'Display All User Accounts', :controller => '/users', :action => 'display', :id => "all" %> <br />
 			<%= link_to 'Display Users That Owe', :controller => '/users', :action => 'displayUsersThatOwe', :id => "all" %> <br />
 			<%= link_to 'Display Registered Users', :controller => '/users', :action => 'displayRegisteredUsers', :id => "all" %> <br />
-			<%= link_to 'Print Registered Users', :controller => '/users', :action => 'printUsers', :id => "all" %> <br /><br/>
+			<%= link_to 'Print Registered Users', :controller => '/users', :action => 'printUsers', :id => "all" %> <br />
+			<%= link_to 'Print Registered Users By Zipcode', :controller => '/users', :action => 'printUsersByZipCode', :id => "all" %> <br />
+			<%= link_to 'Print Registered Users by State', :controller => '/users', :action => 'printUsersByState', :id => "all" %> <br />			
+			<br/>
         	<%= link_to 'Display all Students', :controller => 'students' %> <br />
 			<%= link_to 'Display all Parents', :controller => 'parents' %> <br />
 			<%= link_to 'Display ' + AdminController::SchoolYear + ' Students', :controller => '/students', :action => 'displayNewStudents', :id => "all" %> <br />

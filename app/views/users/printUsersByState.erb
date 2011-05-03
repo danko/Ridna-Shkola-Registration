@@ -1,0 +1,22 @@
+<h1>Listing Number of Families Registered for <%=AdminController::SchoolYear%> School Year by State</h1>
+
+
+<% state = "none" %>
+<% numInState = 0 %>
+<% for user in @users %>
+	<% student = Student.find_by_userid( user.userid, :order => :firstname) %>
+
+	<% if student != nil && student.registration_year == AdminController::SchoolYear %>
+		<% if user.state != state %>
+			<h3> <%= state%>     <%= numInState %></h3>
+			<% state = user.state %>
+			<% numInState = 0 %>
+		<%end%>
+		<% numInState = numInState + 1 %>
+	<%end%>
+<%end%>
+<h3> <%= state%>     <%= numInState %></h3>
+
+
+
+
