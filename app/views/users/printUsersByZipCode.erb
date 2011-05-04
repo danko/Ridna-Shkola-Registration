@@ -1,5 +1,9 @@
 <h1>Listing Number of Families Registered for <%=AdminController::SchoolYear%> School Year by zipcode</h1>
-
+<table>
+  <tr>
+    <th>Zipcode</th>
+    <th>NumFamilies</th>
+  </tr>
 
 <% zipcode = "none" %>
 <% numInZipcode = 0 %>
@@ -8,11 +12,18 @@
 
 	<% if student != nil && student.registration_year == AdminController::SchoolYear %>
 		<% if user.zip != zipcode %>
-			<h3> <%= zipcode %>     <%= numInZipcode %></h3>
+		<tr>
+	    	<td><%=h zipcode %></td>
+	    	<td><%=h numInZipcode %></td>
+	  	</tr>			
 			<% zipcode = user.zip %>
 			<% numInZipcode = 0 %>
 		<%end%>
 		<% numInZipcode = numInZipcode + 1 %>
 	<%end%>
 <%end%>
-<h3> <%= zipcode%>     <%= numInZipcode %></h3>
+<tr>
+	<td><%=h zipcode %></td>
+	<td><%=h numInZipcode %></td>
+</tr>
+</table>

@@ -1,5 +1,9 @@
 <h1>Listing Number of Families Registered for <%=AdminController::SchoolYear%> School Year by State</h1>
-
+<table>
+  <tr>
+    <th>State</th>
+    <th>NumFamilies</th>
+  </tr>
 
 <% state = "none" %>
 <% numInState = 0 %>
@@ -8,15 +12,20 @@
 
 	<% if student != nil && student.registration_year == AdminController::SchoolYear %>
 		<% if user.state != state %>
-			<h3> <%= state%>     <%= numInState %></h3>
+		<tr>
+	    <td><%=h state %></td>
+	    <td><%=h numInState %></td>
+	  </tr>
 			<% state = user.state %>
 			<% numInState = 0 %>
 		<%end%>
 		<% numInState = numInState + 1 %>
 	<%end%>
 <%end%>
-<h3> <%= state%>     <%= numInState %></h3>
-
-
+<tr>
+  <td><%=h state %></td>
+  <td><%=h numInState %></td>
+</tr>
+</table>
 
 
