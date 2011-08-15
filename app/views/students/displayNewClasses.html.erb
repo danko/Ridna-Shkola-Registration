@@ -64,9 +64,9 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>1st Grade</h3>
-Teacher: Lilia Vaichekauskus<br/>
+Teacher: Liliya Vaichekauskas<br/>
 703-671-1409<br/>
-VaichekauL@usa.redcross.org<br />
+VaichekauskasL@gmail.com<br />
 <br/>
 Teacher Assistant: Anna Shkrabaliuk<br/>
 anna.shkr@gmail.com<br/>
@@ -103,10 +103,7 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>Bilingual - 2</h3>
-Marta Kowalczyk<br/>
-703-533-9879<br/>
-mkowalczyk@cox.net
-<br />
+Contingent on enrollment
 <br />
 <% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = 'Bilingual2'", :order => :lastname)
 %>
@@ -211,7 +208,7 @@ Number of Students:  <%= i %>
 <h3>History</h3>
 Marika Jurach<br/>
 703-864-3723<br/>
-marikaju@starpower.net<br/>
+jurach_marika@bah.com<br/>
 <br/>
 
 <h3>Culture</h3>
@@ -227,9 +224,9 @@ olhakushnir@yahoo.com<br/>
 <br/>
 
 <h3>Language and Literature</h3>
-Oleh Voloshen<br/>
+Oleh Voloshyn<br/>
 443-315-8873<br/>
-verohal@ukr.net<br/>
+ovoloshyn@yahoo.com<br/>
 <br/>
 
 <h1>High School</h1>
@@ -295,6 +292,7 @@ ovoloshyn@yahoo.com<br/>
 <% adultNumberOfStudents = 0 %>
 <h1>Adult Classes</h1>
 <h3>Ukrainian Language for Adults - Fall</h3>
+<br/>
 <% i=0 %>
 <% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = 'adultFall'", :order => :lastname)
 %>

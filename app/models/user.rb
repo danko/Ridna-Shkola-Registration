@@ -67,7 +67,12 @@ end
     children = Student.find_all_by_userid(userid, :conditions => AdminController::RegistrationYearString)
     return children.length
   end
-  
+
+  def num_in_playgroup
+    children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'Playgroup' and " + AdminController::RegistrationYearString)
+    return children.length
+  end
+    
   def num_in_svitlychka
     children = Student.find_all_by_userid(userid, :conditions => "newgrade = 'Svitlychka' and " + AdminController::RegistrationYearString)
     return children.length
@@ -134,7 +139,7 @@ end
   end
 
   def calc_amount_due
-    num_childs = num_of_children - num_adult_students
+    num_childs = num_of_children - num_adult_students - num_in_playgroup
     if num_childs == 1
       due = 725
     elsif num_childs == 2
