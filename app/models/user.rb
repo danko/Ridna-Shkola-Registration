@@ -136,11 +136,13 @@ end
   def calc_amount_due
     num_childs = num_of_children - num_adult_students
     if num_childs == 1
-      due = 625
+      due = 725
     elsif num_childs == 2
-      due = 875
-    elsif num_childs >= 3
-      due = 975
+      due = 1075
+    elsif num_childs == 3
+      due = 1275
+    elsif num_childs >= 4
+      due = 1375
     else
       due = 0
     end
@@ -152,9 +154,9 @@ end
     if due < 0
       due = 0
     end
-    due = due + num_adult_fall * 300
-    due = due + num_adult_spring * 300
-    due = due + num_adult_both * 600
+    due = due + num_adult_fall * 400
+    due = due + num_adult_spring * 400
+    due = due + num_adult_both * 800
     return due
   end   
   

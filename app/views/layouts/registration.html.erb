@@ -22,13 +22,16 @@
       <% if session[:user_id] %>
       	<%= link_to 'Show My Account', :controller => 'users' %> <br />
       	<%= link_to 'Change My Password', :controller => 'users' , :action => 'changePassword', :id => "all"%> <br /><br/>
-		<%= link_to 'Display ' + AdminController::SchoolYear + ' Classes', :controller => '/students', :action => 'displayNewClasses', :id => "all" %> <br />
-		<%= link_to 'Display ' + AdminController::PreviousSchoolYear + ' Classes', :controller => '/students', :action => 'displayOldClasses', :id => "all" %> <br />
-		<%= link_to 'Display Online Address Book', :controller => '/users', :action => 'onlineaddressbook', :id => "all" %> <br />
-
-
 
 		<%  @current_user = User.find(session[:user_id]) %>
+
+            <%if @current_user.calc_amountpaid > 0 %>
+	        <%= link_to 'Display ' + AdminController::SchoolYear + ' Classes', :controller => '/students', :action => 'displayNewClasses', :id => "all" %> <br />
+	        <%= link_to 'Display ' + AdminController::PreviousSchoolYear + ' Classes', :controller => '/students', :action => 'displayOldClasses', :id => "all" %> <br />
+	        <%= link_to 'Display Online Address Book', :controller => '/users', :action => 'onlineaddressbook', :id => "all" %> <br />
+			<%end%>
+
+
 
 		<%if @current_user[:admin]%>
 			<b><ul>Reports</ul></b>

@@ -28,9 +28,11 @@ Number of Students:  <%= i %>
 <h1>Elementary School</h1>
 <% i=0 %>
 <h3>Pidhotovcha</h3>
-Lida Futey-Murphy<br/>
+Teacher: Lida Futey-Murphy<br/>
 410-647-8264<br/>
-futeymurphy@comcast.net
+futeymurphy@comcast.net<br/><br/>
+Teacher Assistant: Natalie Breslawec<br>
+njb9505@verizon.net
 <br />
 <br />
 <% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = 'Pidhotovcha'", :order => :lastname)
@@ -62,10 +64,12 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>1st Grade</h3>
-Lilia Vaichekauskus<br/>
+Teacher: Lilia Vaichekauskus<br/>
 703-671-1409<br/>
-VaichekauL@usa.redcross.org
-<br />
+VaichekauL@usa.redcross.org<br />
+<br/>
+Teacher Assistant: Anna Shkrabaliuk<br/>
+anna.shkr@gmail.com<br/>
 <br />
 <% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '1'", :order => :lastname)
 %>
@@ -80,10 +84,12 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>2nd Grade</h3>
-Lesia Koval<br/>
+Teacher: Lesia Koval<br/>
 301-309-8410<br/>
-lesiakov@netscape.net
-<br />
+lesiakov@netscape.net<br />
+<br/>
+Teacher Assistant: Natalya Olson<br/>
+nataliya.olson@gmail.com
 <br />
 <% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '2'", :order => :lastname)
 %>
@@ -114,9 +120,9 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>3rd Grade</h3>
-Talia Cybyk<br/>
-410-884-5984<br/>
-cybyktz@gmail.com
+Marta Kulchytska<br/>
+(410) 757-4920<br/>
+mkulchytska@gmail.com
 <br />
 <br />
 <% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '3'", :order => :lastname)
@@ -131,9 +137,9 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>4th Grade</h3>
-Maria Nyniuk<br/>
+Liana Tsvetova<br/>
 202-396-8541<br/>
-svitozarnenyuk@verizon.net<br />
+lianatsv@gmail.com<br />
 <br />
 <% @students = Student.find(:all, :conditions => AdminController::RegistrationYearString + "and newgrade = '4'", :order => :lastname)
 %>
@@ -147,7 +153,9 @@ Number of Students:  <%= i %>
 
 <% i=0 %>
 <h3>5th Grade</h3>
-Olya Golovchak<br/>
+Teacher: Tania Iwaskiw<br/>
+tli1020@gmail.com<br/><br/>
+Teacher Assistant: Olya Golovchak<br/>
 410-870-2141<br/>
 ogolovchak@gmail.com
 <br />
@@ -206,10 +214,10 @@ Marika Jurach<br/>
 marikaju@starpower.net<br/>
 <br/>
 
-<h3>Language and Literature</h3>
-Olena Shevchenko<br/>
-301-229-1220<br/>
-oshevchenko@verizon.net<br/>
+<h3>Culture</h3>
+Iryna Goula<br/>
+703-834-0889<br/>
+iryna.goula@associates.dhs.gov<br/>
 <br/>
 
 <h3>Geography</h3>
@@ -218,7 +226,7 @@ Olia Kushnir<br/>
 olhakushnir@yahoo.com<br/>
 <br/>
 
-<h3>Culture</h3>
+<h3>Language and Literature</h3>
 Oleh Voloshen<br/>
 443-315-8873<br/>
 verohal@ukr.net<br/>
@@ -275,23 +283,14 @@ Olena Ftomova<br/>
 oftomova@hotmail.com<br/>
 <br/>
 
-<h3>Literature 9-10</h3>
-Oles Bereznyj<br/>
-703-534-0309<br/>
-oles@berezhny.net<br/>
+<h3>Language</h3>
+Oleh Voloshyn<br/>
+443-315-8873<br/>
+ovoloshyn@yahoo.com<br/>
 <br/>
 
 
-<h3>Language for Matura</h3>
-Theodore Caryk<br/>
-301-840-1713<br/>
-<br/>
 
-<h3>Written and Spoken Ukrainian</h3>
-Olena Shevchenko<br/>
-301-229-1220<br/>
-oshevchenko@verizon.net<br/>
-<br/>
 
 <% adultNumberOfStudents = 0 %>
 <h1>Adult Classes</h1>
@@ -344,31 +343,34 @@ Number of Students:  <%= i %>
 
 <h1>Performing Arts, Ethics and Literacy Programming</h1>
 
-<h3>Music grades K-11</h3>
-Darka Nebesh<br/>
-410-997-5382<br/>
-dnebesh@hotmail.com<br/>
+<h3>Music & Performing Arts</h3>
+Natalie Shkarbaliuk<br/>
+natalie.shk@gmail.com<br/>
 <br/>
 
+<h3>Dance & Performing Arts</h3>
+Anna Shkrabaliuk<br/>
+anna.shkr@gmail.com<br/>
+<br/>
 
-<h3>Ethics and Religion</h3>
-Maria Nyniuk<br/>
-202-396-8541<br/>
-svitozarnenyuk@verizon.net
-<br />
-<br />
-	
-<h3>Ethics and Religion</h3>
-Luba Campion<br/>
-301-871-2352<br/>
-lbcampion@yahoo.com
-<br />
-<br />
+<h3>Editor, Student Newsletter</h3>
+Antonina Ftomova<br/>
+antoninaft@mail.ru<br/>
+<br/>
 
-<h3>Resource Teacher and Libraian</h3>
-Sonia Karmazyn<br/>
-301-260-9630<br/>
-karmazyns@yahoo.com<br/>
+<h3>Read-a-thon Coordinator</h3>
+Lada Onyshkevych<br/>
+lada2@verizon.net<br/>
+<br/>
+
+<h3>Ukrainian for Adults</h3>
+Marta Kowalczyk<br/>
+mkowalczyk@cox.net<br/>
+<br/>
+
+<h3>Playgroup ages 0-3</h3>
+Tanya Kuzmenko<br/>
+tkuzmenko@yahoo.com<br/>
 <br/>
 
 <h1>Administration</h1>

@@ -17,7 +17,7 @@
   	<tr>
     	<td><%=h user.family %></td>
     	<td><%=h user.login %></td>
-		<td><%= number_to_currency(user.amountdue) %></td>
+		<td><%= number_to_currency(user.calc_amount_due) %></td>
 		<td><%=h number_to_currency(user.calc_amountpaid) %></td>
 		<td><%=h number_to_currency(temp_balance) %></td>
 		<td><% form_for :user, :url => new_check_path do |form| %>

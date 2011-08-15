@@ -4,15 +4,15 @@ class AdminController < ApplicationController
   # enter a name and password
   
   # Strings represnting the previous school year
-  PreviousSchoolYear = '2009-2010'
+  PreviousSchoolYear = '2010-2011'
   PreviousRegistrationYearString = "registration_year = '" + AdminController::PreviousSchoolYear + "'"
   
   # Strings representing the current School Year
-  SchoolYear = '2010-2011'
+  SchoolYear = '2011-2012'
   RegistrationYearString = "registration_year = '" + AdminController::SchoolYear + "'"
   
   # Date object representing checks for the new school year, assume payments complete by 1 july each year
-  NewCheckDate = Date::new(2010, 7, 1)
+  NewCheckDate = Date::new(2011, 7, 1)
   
   def login
     if request.post?
