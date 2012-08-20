@@ -141,17 +141,17 @@ end
   def calc_amount_due
     num_childs = num_of_children - num_adult_students - num_in_playgroup
     if num_childs == 1
-      due = 725
+      due = 750
     elsif num_childs == 2
-      due = 1075
+      due = 1110
     elsif num_childs == 3
-      due = 1275
+      due = 1315
     elsif num_childs >= 4
-      due = 1375
+      due = 1415
     else
       due = 0
     end
-    deduct = num_in_svitlychka * 400
+    deduct = num_in_svitlychka * 100
     due = due - deduct
     if num_childs == num_in_svitlychka
       due = 0
